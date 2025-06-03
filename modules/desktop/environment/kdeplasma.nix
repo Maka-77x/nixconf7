@@ -5,9 +5,8 @@
       inputs.plasma-manager.homeManagerModules.plasma-manager
     ];
 
-    programs.plasma = {
-      enable = true;
-      shortcuts = {
+    programs.plasma.enable = true;
+    programs.plasma.shortcuts = {
         "ActivityManager"."switch-to-activity-181b1250-1bb2-402c-9d6a-29214f2b2c3f" = [ ];
         "ActivityManager"."switch-to-activity-b04cdf06-f69b-4426-a388-d784c86899b5" = [ ];
         "ActivityManager"."switch-to-activity-c245c079-af1c-41e3-991e-31836544ee97" = [ ];
@@ -344,7 +343,7 @@
           "F12,F12,Open/Retract Yakuake"
         ];
       };
-      configFile = {
+    programs.plasma.configFile = {
         "baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
         "baloofilerc"."General"."dbVersion" = 2;
         "baloofilerc"."General"."exclude filters" =
@@ -929,12 +928,12 @@
         "systemsettingsrc"."Open-with settings"."History" = "";
         "systemsettingsrc"."systemsettings_sidebar_mode"."HighlightNonDefaultSettings" = false;
       };
-      dataFile = {
+    programs.plasma.dataFile = {
         "dolphin/view_properties/global/.directory"."Dolphin"."HeaderColumnWidths" = "707,79,146";
         "dolphin/view_properties/global/.directory"."Dolphin"."SortOrder" = 1;
         "dolphin/view_properties/global/.directory"."Dolphin"."SortRole" = "modificationtime";
         "kate/anonymous.katesession"."Document 0"."URL" =
-        "file:///home/mimi/Downloads/3. MNIST_Classification_Torch_2024.ipynb";
+          "file:///home/mimi/Downloads/3. MNIST_Classification_Torch_2024.ipynb";
         "kate/anonymous.katesession"."Kate Plugins"."cmaketoolsplugin" = false;
         "kate/anonymous.katesession"."Kate Plugins"."compilerexplorer" = false;
         "kate/anonymous.katesession"."Kate Plugins"."eslintplugin" = false;

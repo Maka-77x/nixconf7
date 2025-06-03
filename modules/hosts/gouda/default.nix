@@ -24,7 +24,7 @@
       sound
       virtualisation
       vpn
-      work
+      #       work
     ];
     tags = [
       #       "ai" # already defined in nixos base
