@@ -44,7 +44,7 @@
 
     make-shell.url = "github:nicknovitski/make-shell";
 
-    unify.url = "git+https://codeberg.org/quasigod/unify";
+    unify.url = "git+https://codeberg.org/quasigod/unify?ref=hosts-redesign";
     unify.inputs.nixpkgs.follows = "nixpkgs";
     unify.inputs.home-manager.follows = "home-manager";
 

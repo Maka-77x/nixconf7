@@ -1751,15 +1751,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1747505198,
-        "narHash": "sha256-Yi9dC+Si2hqbVNhtiZYCBl28RYGevYU1mARTxpWIWVo=",
-        "ref": "refs/heads/main",
-        "rev": "15afe60d16d4526d7c0e138f87e9a76f4ebf9c23",
-        "revCount": 24,
+        "lastModified": 1748546328,
+        "narHash": "sha256-mzAK3nAs655dDI/xDEycZb3rw4ol5p3a3xhW7pD+fSM=",
+        "ref": "hosts-redesign",
+        "rev": "30a1786228d1cefdcbbd907b3361f0bd5a0ce7fd",
+        "revCount": 31,
         "type": "git",
         "url": "https://codeberg.org/quasigod/unify"
       },
       "original": {
+        "ref": "hosts-redesign",
         "type": "git",
         "url": "https://codeberg.org/quasigod/unify"
       }
