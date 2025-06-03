@@ -1,11 +1,9 @@
 {
   inputs,
-  modulesPath,
   lib,
   ...
 }:
 {
-  imports = [ "${modulesPath}/profiles/perlless.nix" ];
   unify.hosts.nixos.gouda.nixos = {
     imports = [
       { system.forbiddenDependenciesRegexes = lib.mkForce [ ]; }
