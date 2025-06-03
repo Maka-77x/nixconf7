@@ -27,22 +27,22 @@
       #       work
     ];
     tags = [
-      "ai" # already defined in nixos base
-      "base" # already defined in nixos base
-      "bluetooth"
+      #       "ai" # already defined in nixos base
+      #       "base" # already defined in nixos base
+      #       "bluetooth"
       "desktop"
-      "dev"
+      #       "dev"
       #       "email"
-      "facter" # already defined in nixos base
-      "fwupd"
-      "games"
+      #       "facter" # already defined in nixos base
+      #       "fwupd"
+      #       "games"
       #       "guacamole"
-      "messaging"
-      "openssh" # already defined in nixos base
-      "shell" # already defined in nixos base
-      "sound"
-      "virtualisation"
-      "vpn" # already defined in nixos base
+      #       "messaging"
+      #       "openssh" # already defined in nixos base
+      #       "shell" # already defined in nixos base
+      #       "sound"
+      #       "virtualisation"
+      #       "vpn" # already defined in nixos base
       #       "work"
       "laptop"
     ];
