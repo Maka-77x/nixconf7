@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}:{
+}:
+{
   unify.hosts.nixos.gouda.nixos = {
     boot.loader.systemd-boot.enable = true;
     boot.loader.systemd-boot.configurationLimit = 15;
@@ -19,16 +20,16 @@
     boot.plymouth.enable = true;
 
     boot.supportedFilesystems = [
-        "ext4"
-        "btrfs"
-        "f2fs"
-        "ntfs"
-        "vfat"
-        "xfs"
-      ];
+      "ext4"
+      "btrfs"
+      "f2fs"
+      "ntfs"
+      "vfat"
+      "xfs"
+    ];
 
     boot.binfmt.registrations.appimage.wrapInterpreterInShell = false;
-    boot.binfmt.registrations.appimage.interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    #     boot.binfmt.registrations.appimage.interpreter = "${pkgs.appimage-run}/bin/appimage-run";
     boot.binfmt.registrations.appimage.recognitionType = "magic";
     boot.binfmt.registrations.appimage.offset = 0;
     boot.binfmt.registrations.appimage.mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
@@ -37,16 +38,19 @@
     boot.enableContainers = lib.mkDefault false;
 
     boot.initrd.availableKernelModules = [
-        "xhci_pci"
-        "thunderbolt"
-        "vmd"
-        "nvme"
-        "usb_storage"
-        "usbhid"
-        "sd_mod"
-      ];
+      "xhci_pci"
+      "thunderbolt"
+      "vmd"
+      "nvme"
+      "usb_storage"
+      "usbhid"
+      "sd_mod"
+    ];
 
-    boot.initrd.kernelModules = [ "i915" "kvm-intel" ];
+    boot.initrd.kernelModules = [
+      "i915"
+      "kvm-intel"
+    ];
     boot.initrd.verbose = false;
     boot.initrd.systemd.strip = true;
     boot.initrd.enable = true;
@@ -144,7 +148,6 @@
       "quiet"
       "splash"
     ];
-
 
   };
 }
