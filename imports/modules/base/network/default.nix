@@ -1,5 +1,6 @@
 {
-  unify.modules.base.nixos = { hostConfig, ... }:
+  unify.modules.base.nixos =
+    { hostConfig, ... }:
     {
       networkin.hostName = hostConfig.name;
       networkin.networkmanager.enable = true;
@@ -25,15 +26,12 @@
           to = 1764;
         }
       ];
-      networking.nftables = {
-        enable = true;
-      };
+      networking.nftables.enable = true;
       networking.search = [ ];
 
-      users.users.mimi = {
-        extraGroups = [
-          "networkmanager"
-        ];
-      };
+      users.users.mimi.extraGroups = [
+        "networkmanager"
+      ];
+
     };
 }

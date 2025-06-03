@@ -3,25 +3,30 @@
     programs.fish.enable = true;
   };
 
-  unify.modules.shell.home = { pkgs, ... }: {
-    home.shell.enableFishIntegration = true;
+  unify.modules.shell.home =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.shell.enableFishIntegration = true;
 
-    programs.fish.enable = true;
-    programs.fish.plugins = [
-      {
-        name = "autopair";
-        src = pkgs.fishPlugins.autopair;
-      }
-    ];
-    programs.fish.shellAliases = {
-      ".." = "cd ..";
-      "..." = "cd ../..";
-      cat = "bat";
-      ls = "eza";
-      grep = "rg";
+      programs.fish.enable = true;
+      programs.fish.plugins = [
+        {
+          name = "autopair";
+          src = pkgs.fishPlugins.autopair;
+        }
+      ];
+      programs.fish.shellAliases = {
+        ".." = "cd ..";
+        "..." = "cd ../..";
+        cat = "bat";
+        ls = "eza";
+        grep = "rg";
+      };
+      programs.fish.functions = {
+        fish_greeting = "";
+      };
     };
-    programs.fish.functions = {
-      fish_greeting = "";
-    };
-  };
 }

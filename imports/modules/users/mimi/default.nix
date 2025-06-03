@@ -631,7 +631,7 @@
       #
     };
   unify.modules.base.home =
-    { config, pkgs, ... }:
+    { pkgs, ... }:
     {
       programs.nh.enable = true;
       programs.obs-studio.enable = true;

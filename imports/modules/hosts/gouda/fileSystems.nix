@@ -1,25 +1,106 @@
 {
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
+{
   unify.hosts.nixos.gouda.nixos = {
     fileSystems."/" = {
-      device = "/dev/disk/by-uuid/204faa11-b822-4a93-a1ce-9aad34208909";
-      fsType = "ext4";
+      device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";
+      fsType = "btrfs";
+      options = [
+        "rw"
+        "relatime"
+        "compress=zstd:3"
+        "ssd"
+        "discard=async"
+        "space_cache=v2"
+        "subvol=/@"
+      ];
     };
 
-    fileSystems."/boot/efi" = {
-      device = "/dev/disk/by-uuid/9C5C-728F";
-      fsType = "vfat";
-    };
+  fileSystems."/.snapshots" = {
+    device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";
+    fsType = "btrfs";
+    options = [
+      "rw"
+      "relatime"
+      "compress=zstd:3"
+      "ssd"
+      "discard=async"
+      "space_cache=v2"
+      "subvol=/@.snapshots"
+    ];
+  };
 
-    fileSystems."/home" = {
-      device = "/dev/disk/by-uuid/5ebb905e-0d3e-4e43-ac34-7038c7bbdef7";
-      fsType = "ext4";
-    };
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";
+    fsType = "btrfs";
+    options = [
+      "rw"
+      "relatime"
+      "compress=zstd:3"
+      "ssd"
+      "discard=async"
+      "space_cache=v2"
+      "subvol=/@nix"
+    ];
+  };
 
-    fileSystems."/nix" = {
-      device = "/dev/disk/by-uuid/5b4f6c73-28b0-4792-bda6-c407d8a75a78";
-      fsType = "ext4";
-    };
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";
+    fsType = "btrfs";
+    options = [
+      "rw"
+      "relatime"
+      "compress=zstd:3"
+      "ssd"
+      "discard=async"
+      "space_cache=v2"
+      "subvol=/@home"
+    ];
+  };
 
-    swapDevices = [ { device = "/dev/disk/by-uuid/4d6748a8-dddc-40c5-86ed-04bd3c75c9c0"; } ];
+  fileSystems."/var/log" = {
+    device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";
+    fsType = "btrfs";
+    options = [
+      "rw"
+      "relatime"
+      "compress=zstd:3"
+      "ssd"
+      "discard=async"
+      "space_cache=v2"
+      "subvol=/@log"
+    ];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/4EB7-2C5E";
+    fsType = "vfat";
+    options = [
+      "rw"
+      "relatime"
+      "fmask=0022"
+      "dmask=0022"
+      "codepage=437"
+      "iocharset=ascii"
+      "shortname=mixed"
+      "utf8"
+      "errors=remount-ro"
+    ];
+  };
+
+  fileSystems."/swap" = {
+    device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";
+    fsType = "btrfs";
+    options = [ "subvol=/@swap" ];
+  };
+  swapDevices = [ { device = "/swap/swapfile"; } ]
+
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
   };
 }

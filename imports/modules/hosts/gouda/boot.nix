@@ -1,10 +1,15 @@
 {
+  lib,
+  ...
+}:
+{
   unify.hosts.nixos.gouda.nixos =
+    { pkgs, ... }:
     {
-      lib,
-      ...
-    }:
-    {
+      boot.extraModulePackages = [ ];
+      boot.extraModprobeConfig = ''
+        options v4l2loopback exclusive_caps=1 card_label="Camera 1"
+      '';
       boot.loader.systemd-boot.enable = true;
       boot.loader.systemd-boot.configurationLimit = 15;
       boot.loader.systemd-boot.consoleMode = lib.mkDefault "max";
@@ -45,6 +50,9 @@
         "usb_storage"
         "usbhid"
         "sd_mod"
+        "kvm-intel"
+        "br_netfilter"
+        "v4l2loopback"
       ];
 
       boot.initrd.kernelModules = [
