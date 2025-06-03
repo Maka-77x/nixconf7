@@ -212,59 +212,40 @@ topLevel@{
       subrepo = "!sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -";
       human = "name-rev --name-only --refs=refs/heads/*";
     };
-    programs.git.extraConfig = {
-      branch = {
-        autosetuprebase = "always";
-      };
-      color = {
-        ui = "auto";
-      };
-      core = {
-        autocrlf = "input";
-        editor = "micro";
-        safecrlf = "warn";
-        excludesfile = "~/.gitignore_global";
-      };
-      diff = {
-        mnemonicprefix = true;
-      };
-      include = {
-        path = "~/.gitconfig.local";
-      };
-      init = {
-        defaultBranch = "main";
-      };
-      merge = {
-        conflictstyle = "diff3";
-        commit = "no";
-        ff = "no";
-        tool = "splice";
-      };
-      push = {
-        autoSetupRemote = true;
-        default = "current";
-      };
-      pull = {
-        default = "matching";
-        rebase = true;
-      };
-      rebase = {
-        instructionFormat = "(%an <%ae>) %s";
-        updateRefs = true;
-      };
-      rerere = {
-        enabled = true;
-      };
-      sequence = {
-        editor = "code --wait";
-      };
-      signing = {
-        signByDefault = true;
-        key = topLevel.config.flake.meta.users.${config.home.username}.key;
-      };
-      commit = {
-        gpgsign = true;
-      };
+    programs.git.extraConfig.branch.autosetuprebase = "always";
+    programs.git.extraConfig.color.ui = "auto";
+
+    programs.git.extraConfig.core.autocrlf = "input";
+    programs.git.extraConfig.core.editor = "micro";
+    programs.git.extraConfig.core.safecrlf = "warn";
+    programs.git.extraConfig.core.excludesfile = "~/.gitignore_global";
+
+    programs.git.extraConfig.diff.mnemonicprefix = true;
+    programs.git.extraConfig.include.path = "~/.gitconfig.local";
+
+    programs.git.extraConfig.init.defaultBranch = "main";
+
+    programs.git.extraConfig.merge.conflictstyle = "diff3";
+    programs.git.extraConfig.merge.commit = "no";
+    programs.git.extraConfig.merge.ff = "no";
+    programs.git.extraConfig.merge.tool = "splice";
+
+    programs.git.extraConfig.push.autoSetupRemote = true;
+    programs.git.extraConfig.push.default = "current";
+
+    programs.git.extraConfig.pull.default = "matching";
+    programs.git.extraConfig.pull.rebase = true;
+
+    programs.git.extraConfig.rebase.instructionFormat = "(%an <%ae>) %s";
+    programs.git.extraConfig.rebase.updateRefs = true;
+
+    programs.git.extraConfig.rerere.enabled = true;
+
+    programs.git.extraConfig.sequence.editor = "code --wait";
+
+    programs.git.extraConfig.signing.signByDefault = true;
+    programs.git.extraConfig.signing.key = topLevel.config.flake.meta.users.${config.home.username}.key;
+    programs.git.extraConfig.commit.gpgsign = true;
+
     };
-  };
 }

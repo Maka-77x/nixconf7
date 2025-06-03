@@ -1,37 +1,38 @@
 {
   unify.modules.desktop.nixos =
-    { pkgs, ... }:
+    { pkgs,lib, ... }:
     {
-      xdg = {
-        portal = {
-          config.common.default = "kde";
-          extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde ];
-        };
-      };
+      xdg.autostart.enable = true;
 
-      services = {
-        xserver = {
-          enable = true;
-          xkb = {
-            #             options = "eurosign:e";
-          };
-        };
-        desktopManager = {
-          plasma6 = {
-            enable = true;
-          };
-        };
-        displayManager = {
-          sddm = {
-            enable = true;
-          };
-        };
-      };
+      xdg.portal.config.common.default = "kde";
+      xdg.portal.config.hyprland.default = [
+        "hyprland"
+        "gtk"
+      ];
 
-      # Only for Winbox
-      networking = {
-        firewall.allowedUDPPorts = [ 5678 ];
-      };
+      xdg.portal.extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde ];
+      xdg.portal.xdgOpenUsePortal = true;
+      xdg.portal.wlr.enable = true;
+
+      services.xserver.xkb = { /* options = "eurosign:e"; */ };
+      services.xserver.excludePackages = with pkgs; [ xterm ];
+      services.xserver.enable = lib.mkForce false;
+      services.xserver.displayManager.gdm.enable = false;
+      services.xserver.desktopManager.gnome.enable = false;
+
+      services.xserver.videoDrivers = [ "modesetting" ];
+      services.xserver.xkb.layout = "gb";
+      services.xserver.xkb.variant = "";
+
+      services.desktopManager.plasma6.enable = true;
+      services.desktopManager.plasma6.enableQt5Integration = false;
+      services.displayManager.sddm.enable = true;
+      services.displayManager.sddm.enableHidpi = true;
+      services.displayManager.sddm.wayland.enable = true;
+      services.displayManager.sddm.wayland.compositor = "kwin";
+      services.displayManager.defaultSession = "plasma";
+
+      networking.firewall.allowedUDPPorts = [ 5678 ];
     };
 
   unify.modules.desktop.home =

@@ -1,5 +1,7 @@
 {
   unify.modules.base.home = {
+
+    xdg.icons.enable = true;
     xdg.enable = true;
     xdg.mime.enable = true;
     xdg.userDirs.enable = true;
