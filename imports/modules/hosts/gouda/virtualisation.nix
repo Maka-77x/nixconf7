@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }:{
+{ pkgs, lib, ... }:
+{
   unify.hosts.nixos.gouda.nixos = {
     # systemd does not work for system user
     # virtualisation.containers.containersConf.settings.engine.cgroup_manager = "cgroupfs";
@@ -12,10 +13,9 @@
     #   system.custom.mainUser.extraGroups = [ "lxd" ];
     virtualisation.containers.registries.search = [ "docker.io" ];
     virtualisation.containers.storage.settings.storage = {
-        driver = "overlay";
-        graphroot = "/home/mimi/.podman/var/lib/containers/storage";
-        runroot = "/home/mimi/.podman/run/containers/storage";
-      };
+      driver = "overlay";
+      graphroot = "/home/mimi/.podman/var/lib/containers/storage";
+      runroot = "/home/mimi/.podman/run/containers/storage";
     };
     virtualisation.libvirtd.enable = true;
     virtualisation.libvirtd.qemu.ovmf.enable = true;
@@ -33,4 +33,6 @@
     virtualisation.podman.dockerCompat = true;
     virtualisation.podman.dockerSocket.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
+
+  };
 }
