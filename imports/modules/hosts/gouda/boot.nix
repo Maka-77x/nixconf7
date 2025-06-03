@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   ...
 }:
 {
@@ -143,7 +142,6 @@
       "net.ipv6.conf.all.forwarding" = lib.mkForce true;
     };
 
-    boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     boot.kernelParams = [
       "quiet"
       "splash"
