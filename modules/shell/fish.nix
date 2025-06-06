@@ -1,9 +1,9 @@
 {
-  unify.modules.shell.nixos = {
+  flake.modules.nixos.shell = {
     programs.fish.enable = true;
   };
 
-  flake.module.homeManager.shell =
+  flake.modules.homeManager.shell =
     {
       pkgs,
       ...

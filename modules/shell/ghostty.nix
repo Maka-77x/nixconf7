@@ -1,5 +1,5 @@
 {
-  flake.module.homeManager.shell = {
+  flake.modules.homeManager.shell = {
     programs.ghostty.enable = true;
     programs.ghostty.enableFishIntegration = true;
     programs.ghostty.settings = {
