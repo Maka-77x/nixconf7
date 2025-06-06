@@ -1,5 +1,5 @@
 {
-  unify.hosts."hosts/nixos" = {
+  flake.modules.nixos."hosts/nixos" = {
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/7bb30cda-a7fd-4f83-9cea-a4a80ede8a6e";
       fsType = "ext4";

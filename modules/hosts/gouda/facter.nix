@@ -1,3 +1,3 @@
 {
-  unify.hosts."nixos.gouda".nixos.facter.reportPath = ./facter.json;
+  flake.modules.nixos."nixos/gouda".facter.reportPath = ./facter.json;
 }

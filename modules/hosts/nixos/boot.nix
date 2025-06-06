@@ -3,7 +3,7 @@
   ...
 }:
 {
-  unify.hosts."hosts/nixos".nixos = {
+  flake.modules.nixos."hosts/nixos".boot = {
 
     # Use the GRUB 2 boot loader.
     boot.loader.grub.enable = true;

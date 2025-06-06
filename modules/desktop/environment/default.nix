@@ -39,7 +39,7 @@
       networking.firewall.allowedUDPPorts = [ 5678 ];
     };
 
-  homeManager.desktop =
+  flake.modules.homeManager.desktop =
     { pkgs, ... }:
     {
       nixpkgs.config.allowUnfree = true;

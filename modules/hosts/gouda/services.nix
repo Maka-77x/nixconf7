@@ -1,5 +1,5 @@
 {
-  unify.hosts."nixos.gouda".nixos = {
+  flake.modules.nixos."nixos/gouda" = {
     services.xserver.xkb.layout = "gb";
 
     services.thermald.enable = true;

@@ -9,7 +9,7 @@
     services.gnome.gnome-keyring.enable = true;
   };
 
-  homeManager.dev =
+  flake.modules.homeManager.dev =
   { pkgs, hostConfig, ... }:lib.mkIf (builtins.elem "desktop" hostConfig.tags) {
     nixpkgs.overlays = [
       (final: prev: {

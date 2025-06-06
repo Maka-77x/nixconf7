@@ -1,18 +1,15 @@
 {
-  flake.modules = {
-    nixos.vpn = {
-      services.netbird.enable = true;
+  flake.modules.nixos.vpn = {
+    services.netbird.enable = true;
+  };
+  flake.modules.homeManager.vpn =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      home.packages = with pkgs; [
+        netbird-ui
+      ];
     };
-  };
-
-  homeManager.vpn =
-  {
-    pkgs,
-    ...
-  }:
-  {
-    home.packages = with pkgs; [
-      netbird-ui
-    ];
-  };
 }

@@ -4,7 +4,7 @@
   ...
 }:
 {
-  unify.hosts."nixos.gouda".nixos =
+  flake.modules.nixos.hosts."nixos/gouda" =
     {
       modulesPath,
       ...

@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.modules.nixos."nixos.gouda" =
+  flake.modules.nixos."nixos/gouda" =
     { config, ... }:
     {
       fileSystems."/" = {

@@ -1,5 +1,5 @@
 {
-  unify.hosts."nixos.gouda".nixos =
+  uflake.modules.nixos."nixos/gouda" =
     { pkgs, lib, ... }:
     {
       # virtualisation.containers.containersConf.settings.engine.cgroup_manager = "cgroupfs";

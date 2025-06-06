@@ -3,7 +3,8 @@
   ...
 }:
 {
-  flake.modules.nixos."nixos.gouda".imports =
+  flake.modules = {
+    nixos."nixos/nixos".imports =
     with (config.flake.modules.nixos);
     [
       ai
@@ -30,7 +31,7 @@
           # "ai"
           "base"
           #       "bluetooth"
-          "desktop"
+          # "desktop"
           "dev"
           #       "email"
           "facter"
@@ -44,8 +45,9 @@
           #       "virtualisation"
           "vpn"
           #       "work"
-          "laptop"
+          # "laptop"
         ];
       }
     ];
+  };
 }

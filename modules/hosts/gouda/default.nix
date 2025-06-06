@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.modules.nixos."nixos.gouda".imports =
+  flake.modules.nixos."nixos/gouda".imports =
     with (config.flake.modules.nixos);
     [
       ai
@@ -25,25 +25,29 @@
       virtualisation
       vpn
       #       work
-    ];
-    tags = [
-      #       "ai" # already defined in nixos base
-      #       "base" # already defined in nixos base
-      #       "bluetooth"
-      "desktop"
-      #       "dev"
-      #       "email"
-      #       "facter" # already defined in nixos base
-      #       "fwupd"
-      #       "games"
-      #       "guacamole"
-      #       "messaging"
-      #       "openssh" # already defined in nixos base
-      #       "shell" # already defined in nixos base
-      #       "sound"
-      #       "virtualisation"
-      #       "vpn" # already defined in nixos base
-      #       "work"
-      "laptop"
-    ];
+    ]
+    ++ [
+          {
+            home-manager.users.mimi.imports = with config.flake.modules.homeManager; [
+              # "ai" # already defined in nixos base
+              "base" # already defined in nixos base
+              # "bluetooth"
+              "desktop"
+              "dev"
+              #       "email"
+              "facter" # already defined in nixos base
+              # "fwupd"
+              # "games"
+              #       "guacamole"
+              # "messaging"
+              # "openssh" # already defined in nixos base
+              "shell" # already defined in nixos base
+              # "sound"
+              # "virtualisation"
+              #       "vpn" # already defined in nixos base
+              #       "work"
+              "laptop"
+            ];
+          }
+      ];
 }

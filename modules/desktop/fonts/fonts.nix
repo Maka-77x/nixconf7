@@ -51,7 +51,7 @@
     fonts.fontconfig.useEmbeddedBitmaps = true;
   };
 
-  homeManager.desktop = {
+  flake.modules.homeManager.desktop = {
     fonts.fontconfig.enable = true;
   };
 }
