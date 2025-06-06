@@ -1,5 +1,5 @@
 {
-  unify.modules.work.nixos = {
+  flake.modules.nixos.displaylink = {
     services.xserver.videoDrivers = [ "displaylink" ];
   };
   nixpkgs.allowedUnfreePackages = [

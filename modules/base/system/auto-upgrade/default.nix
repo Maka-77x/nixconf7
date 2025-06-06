@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     system.autoUpgrade.enable = false;
     system.autoUpgrade.flake = "github:Maka-77x/nixconf7";
     system.autoUpgrade.allowReboot = true;

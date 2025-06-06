@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos =
+  flake.modules.nixos.base =
     { lib, ... }:
     {
       powerManagement.enable = true;

@@ -1,5 +1,5 @@
 {
-  unify.modules.ai.nixos = {
+  flake.modules.nixos.ai = {
     services.litellm.enable = true;
     services.litellm.host = "0.0.0.0";
     services.litellm.port = 8888;

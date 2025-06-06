@@ -3,7 +3,7 @@
     programs.fish.enable = true;
   };
 
-  unify.modules.shell.home =
+  flake.module.homeManager.shell =
     {
       pkgs,
       ...

@@ -4,7 +4,7 @@
   ...
 }:
 {
-  unify.modules.dev.home =
+  flake.modules.homeManager.dev =
     { pkgs, hostConfig, ... }:
     lib.mkIf (builtins.elem "desktop" hostConfig.tags) {
       nixpkgs.overlays = [

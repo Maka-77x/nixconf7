@@ -1,5 +1,5 @@
 {
-  unify.modules.desktop.nixos =  { pkgs, ... }: {
+  flake.modules.nixos.desktop =  { pkgs, ... }: {
     fonts.packages = with pkgs; [
       dina-font
       aporetic
@@ -51,7 +51,7 @@
     fonts.fontconfig.useEmbeddedBitmaps = true;
   };
 
-  unify.modules.desktop.home = {
+  homeManager.desktop = {
     fonts.fontconfig.enable = true;
   };
 }

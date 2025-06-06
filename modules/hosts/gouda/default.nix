@@ -3,11 +3,9 @@
   ...
 }:
 {
-  unify.hosts.nixos.gouda = {
-    users = {
-      mimi = { };
-    };
-    modules = with config.unify.modules; [
+  flake.modules.nixos."nixos.gouda".imports =
+    with (config.flake.modules.nixos);
+    [
       ai
       base
       bluetooth
@@ -19,7 +17,9 @@
       games
       #       guacamole
       messaging
+      mimi
       openssh
+      root
       shell
       sound
       virtualisation
@@ -46,7 +46,4 @@
       #       "work"
       "laptop"
     ];
-
-    fqdn = "gouda.netbird.cloud";
-  };
 }

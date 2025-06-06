@@ -1,5 +1,5 @@
 {
-  unify.modules.shell.home = {
+  flake.module.homeManager.shell = {
     programs.ripgrep.enable = true;
   };
 }

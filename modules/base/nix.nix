@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos =
+  flake.modules.nixos.base =
     { pkgs, ... }:
     {
       nix.channel.enable = false;

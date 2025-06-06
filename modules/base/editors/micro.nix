@@ -1,5 +1,5 @@
 {
-  unify.modules.base.home = {
+  flake.modules.homeManager.base = {
     programs.micro.enable = true;
     programs.micro.settings = {
       diffgutter = true;

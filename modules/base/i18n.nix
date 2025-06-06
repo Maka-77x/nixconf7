@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     i18n.defaultLocale = "en_GB.UTF-8";
     i18n.extraLocaleSettings = {
       LC_ADDRESS = "en_GB.UTF-8";

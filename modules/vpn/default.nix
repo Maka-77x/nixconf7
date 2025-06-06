@@ -1,8 +1,16 @@
 {
-  unify.modules.vpn.nixos = {
-    services.netbird.enable = true;
+  flake.modules = {
+    nixos.vpn = {
+      services.netbird.enable = true;
+    };
   };
-  unify.modules.vpn.home = { pkgs, ... }: {
+
+  homeManager.vpn =
+  {
+    pkgs,
+    ...
+  }:
+  {
     home.packages = with pkgs; [
       netbird-ui
     ];

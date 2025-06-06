@@ -1,6 +1,10 @@
 {
-  unify.modules.desktop.nixos =
-    { pkgs,lib, ... }:
+  lib,
+  ...
+}:
+{
+  flake.modules.nixos.desktop =
+    { pkgs, ... }:
     {
       xdg.autostart.enable = true;
 
@@ -35,7 +39,7 @@
       networking.firewall.allowedUDPPorts = [ 5678 ];
     };
 
-  unify.modules.desktop.home =
+  homeManager.desktop =
     { pkgs, ... }:
     {
       nixpkgs.config.allowUnfree = true;
@@ -66,6 +70,7 @@
         kdePackages.yakuake
         kdePackages.xdg-desktop-portal-kde
         krita
+        pkgs.local.gh-flake-update
         vlc
         vscode-runner
         zotero

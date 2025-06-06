@@ -1,5 +1,5 @@
 {
-  unify.modules.base.home = {
+  flake.modules.homeManager.base = {
 
     xdg.icons.enable = true;
     xdg.enable = true;

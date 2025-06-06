@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     # https://mastodon.online/@nomeata/109915786344697931
     documentation.enable = false;
     documentation.info.enable = false;

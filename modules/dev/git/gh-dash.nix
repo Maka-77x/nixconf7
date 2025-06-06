@@ -1,5 +1,6 @@
 {
-  unify.modules.dev.home = { pkgs, ... }: {
+  flake.modules.homeManager.dev =
+  { pkgs, ... }: {
     programs.gh-dash.enable = true;
     programs.gh-dash.settings = {
       prSections = [

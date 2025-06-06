@@ -3,7 +3,7 @@
     "open-webui"
   ];
 
-  unify.modules.ai.nixos = {
+  flake.modules.nixos.ai = {
     services.open-webui.enable = true;
     services.open-webui.host = "0.0.0.0";
     services.open-webui.port = 8080;

@@ -1,6 +1,9 @@
-{ inputs, ... }:
 {
-  unify.modules.messaging.home =
+  inputs,
+  ...
+}:
+{
+  flake.modules.homeManager.messaging =
     { pkgs, ... }:
     {
       nixpkgs.overlays = [

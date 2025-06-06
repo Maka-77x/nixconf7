@@ -1,5 +1,5 @@
 {
-  unify.modules.ai.nixos = {
+  flake.modules.nixos.ai = {
     services.ollama.enable = true;
     services.ollama.environmentVariables = {
       "OLLAMA_FLASH_ATTENTION" = "true";

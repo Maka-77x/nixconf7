@@ -5,33 +5,33 @@
   ...
 }:
 {
-  imports = [
-    inputs.make-shell.flakeModules.default
-  ];
-
   flake = {
-    deploy.nodes = lib.mapAttrs (
-      hostname: hostConfig:
+    deploy.nodes =
       let
-        system = inputs.self.nixosConfigurations.${hostname}.config.nixpkgs.hostPlatform.system;
+        prefix = "nixosConfigurations/";
       in
-      {
-        hostname = hostConfig.fqdn;
-        fastConnection = false;
-        profiles.system = {
-          user = "root";
-          sshUser = "mimi";
-          sshOpts = [ ];
-          path = inputs.deploy-rs.lib.${system}.activate.nixos inputs.self.nixosConfigurations.${hostname};
-        };
-      }
-    ) config.unify.hosts;
+      lib.pipe (config.flake.modules.nixos or { }) [
+        (lib.filterAttrs (name: _module: lib.hasPrefix prefix name))
+        (lib.mapAttrs' (
+          name: module:
+          let
+            hostname = lib.removePrefix prefix name;
+            system = inputs.self.nixosConfigurations.${hostname}.config.nixpkgs.hostPlatform.system;
+          in
+          {
+            name = hostname;
+            value = {
+              inherit hostname;
+              fastConnection = false;
+              profiles.system = {
+                user = "root";
+                sshUser = "mimi";
+                sshOpts = [ ];
+                path = inputs.deploy-rs.lib.${system}.activate.nixos inputs.self.nixosConfigurations.${hostname};
+              };
+            };
+          }
+        ))
+      ];
   };
-
-  perSystem =
-    { pkgs, ... }:
-    {
-      make-shells.default.packages = with pkgs; [ deploy-rs ];
-    };
-
 }

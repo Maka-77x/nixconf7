@@ -3,7 +3,7 @@
   ...
 }:
 {
-  unify.hosts.nixos.nixos.nixos = {
+  unify.hosts."hosts/nixos".nixos = {
 
     # Use the GRUB 2 boot loader.
     boot.loader.grub.enable = true;

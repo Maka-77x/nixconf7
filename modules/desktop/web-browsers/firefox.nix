@@ -3,7 +3,8 @@
   ...
 }:
 {
-  unify.modules.desktop.home = { pkgs, ... }: {
+  flake.modules.homeManager.dev =
+  { pkgs, ... }: {
     nixpkgs.overlays = [
       inputs.nur.overlays.default
     ];

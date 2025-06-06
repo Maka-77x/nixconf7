@@ -1,5 +1,5 @@
 {
-  unify.modules.dev.home = {
+  flake.modules.homeManager.dev = {
     programs.mergiraf.enable = true;
   };
 }

@@ -1,5 +1,5 @@
 {pkgs, ...}:{
-  unify.modules.bluetooth.nixos = {
+  flake.modules.nixos.bluetooth = {
     hardware.bluetooth.enable = true;
     hardware.bluetooth.package = pkgs.bluez;
     hardware.bluetooth.powerOnBoot = false;

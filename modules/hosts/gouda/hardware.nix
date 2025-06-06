@@ -1,13 +1,11 @@
 {
   inputs,
-  config,
+  lib,
   ...
 }:
 {
-  unify.hosts.nixos.gouda.nixos =
+  unify.hosts."nixos.gouda".nixos =
     {
-      lib,
-      pkgs,
       modulesPath,
       ...
     }:

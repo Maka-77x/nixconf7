@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     console.useXkbConfig = true;
     console.earlySetup = true;
     console.font = "Lat2-Terminus16";

@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     security.sudo-rs.enable = true;
     security.sudo-rs.wheelNeedsPassword = false;
 

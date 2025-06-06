@@ -1,5 +1,5 @@
 {
-  unify.modules.shell.home = {
+  flake.module.homeManager.shell = {
     programs.starship.enable = true;
     programs.starship.enableTransience = true;
     programs.starship.settings.custom.jj1 = {

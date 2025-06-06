@@ -2,7 +2,7 @@ let
   stateVersion = "25.05";
 in
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     system = {
       # This value determines the NixOS release from which the default
       # settings for stateful data, like file locations and database versions
@@ -14,7 +14,7 @@ in
     };
   };
 
-  unify.modules.base.home = {
+  flake.modules.homeManager.base = {
     home = {
       inherit stateVersion;
     };

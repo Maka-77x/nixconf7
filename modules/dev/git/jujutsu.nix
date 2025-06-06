@@ -2,7 +2,8 @@ topLevel@{
   ...
 }:
 {
-  unify.modules.dev.home = { pkgs, config, ... }: {
+  flake.modules.homeManager.dev =
+  { pkgs, config, ... }: {
     home.packages = [
       pkgs.watchman
     ];

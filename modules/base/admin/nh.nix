@@ -7,7 +7,7 @@
     inputs.make-shell.flakeModules.default
   ];
 
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     programs.nh.enable = true;
     programs.nh.clean.enable = true;
     programs.nh.clean.extraArgs = "--keep 2";

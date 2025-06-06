@@ -4,12 +4,13 @@
   ...
 }:
 {
-  unify.modules.dev.nixos = {
+  flake.modules.nixos.dev = {
     # needed for store VS Code auth token
     services.gnome.gnome-keyring.enable = true;
   };
 
-  unify.modules.dev.home = { pkgs, hostConfig, ... }:lib.mkIf (builtins.elem "desktop" hostConfig.tags) {
+  homeManager.dev =
+  { pkgs, hostConfig, ... }:lib.mkIf (builtins.elem "desktop" hostConfig.tags) {
     nixpkgs.overlays = [
       (final: prev: {
         master = import inputs.nixpkgs-master {

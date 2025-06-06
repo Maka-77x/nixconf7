@@ -1,5 +1,5 @@
 {
-  unify.hosts.nixos.gouda.nixos = {
+  unify.hosts."nixos.gouda".nixos = {
     services.xserver.xkb.layout = "gb";
 
     services.thermald.enable = true;

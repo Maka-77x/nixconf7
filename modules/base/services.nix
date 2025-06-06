@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     services.packagekit.enable = true;
     services.flatpak.enable = false;
     # Limit the systemd journal to 100 MB of disk or the

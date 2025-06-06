@@ -3,7 +3,7 @@
   ...
 }:
 {
-  unify.hosts.nixos.gouda.nixos =
+  flake.modules.nixos."hosts/nixos" =
     { pkgs, ... }:
     {
       boot.extraModulePackages = [ ];
@@ -34,7 +34,7 @@
       ];
 
       boot.binfmt.registrations.appimage.wrapInterpreterInShell = false;
-      #     boot.binfmt.registrations.appimage.interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+      boot.binfmt.registrations.appimage.interpreter = "${pkgs.appimage-run}/bin/appimage-run";
       boot.binfmt.registrations.appimage.recognitionType = "magic";
       boot.binfmt.registrations.appimage.offset = 0;
       boot.binfmt.registrations.appimage.mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
@@ -155,6 +155,5 @@
         "quiet"
         "splash"
       ];
-
     };
 }

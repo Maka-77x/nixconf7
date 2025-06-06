@@ -1,5 +1,5 @@
 {
-  unify.modules.email.home =
+  flake.modules.homeManager.email =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [

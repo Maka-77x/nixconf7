@@ -1,5 +1,5 @@
 { lib, ... }:{
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     # See https://github.com/NixOS/nixpkgs/issues/180175
     systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
     systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;

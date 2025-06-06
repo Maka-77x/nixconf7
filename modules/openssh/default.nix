@@ -1,5 +1,5 @@
 {
-  unify.modules.openssh.nixos = {
+  flake.modules.nixos.openssh = {
     services.openssh.enable = true;
     services.openssh.openFirewall = true;
     services.openssh.allowSFTP = false;

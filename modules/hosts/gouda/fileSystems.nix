@@ -1,11 +1,10 @@
 {
   lib,
-
   ...
 }:
 {
-  unify.hosts.nixos.gouda.nixos =
-    { config, pkgs, ... }:
+  flake.modules.nixos."nixos.gouda" =
+    { config, ... }:
     {
       fileSystems."/" = {
         device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";

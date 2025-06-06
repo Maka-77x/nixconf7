@@ -1,5 +1,7 @@
 {
-  unify.modules.work.home = { pkgs, ... }: {
+  flake.modules.homeManager.work =
+  { pkgs, ... }:
+  {
     home.packages = with pkgs; [
       aws-workspaces
     ];

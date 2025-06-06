@@ -4,7 +4,7 @@
   ...
 }:
 {
-  unify.modules.base =
+  flake.modules.homeManager.base =
     let
       predicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages ++ [
         "steam"

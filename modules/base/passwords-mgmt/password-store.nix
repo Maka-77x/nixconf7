@@ -1,5 +1,6 @@
 {
-  unify.modules.base.home = { config, ... }:
+  flake.modules.homeManager.base =
+  { config, ... }:
   {
     programs.password-store.enable = true;
     programs.password-store.settings = {

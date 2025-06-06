@@ -1,9 +1,9 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     programs.command-not-found.enable = false;
   };
 
-  unify.modules.base.home = {
+  flake.modules.homeManager.base = {
     programs.command-not-found.enable = false;
   };
 }

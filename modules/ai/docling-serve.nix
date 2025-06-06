@@ -1,7 +1,7 @@
+{ pkgs, ... }:
 {
-  unify.modules.ai.nixos =
-    { pkgs, ... }:
-    {
+  flake.modules.nixos.ai = {
+
       services.docling-serve.enable = true;
       services.docling-serve.host = "0.0.0.0";
       services.docling-serve.port = 5001;

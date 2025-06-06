@@ -1,5 +1,5 @@
 {
-  unify.modules.ai.nixos = {
+  flake.modules.nixos.ai = {
     services.searx.enable = true;
     services.searx.settings.use_default_settings = true;
     services.searx.settings.general = {

@@ -2,7 +2,8 @@ topLevel@{
   ...
 }:
 {
-  unify.modules.dev.home = { config, ... }: {
+  flake.modules.homeManager.dev =
+  { config, ... }: {
     programs.git.enable = true;
     programs.git.userName = topLevel.config.flake.meta.users.${config.home.username}.name;
     programs.git.userEmail = topLevel.config.flake.meta.users.${config.home.username}.email;
@@ -246,6 +247,5 @@ topLevel@{
     programs.git.extraConfig.signing.signByDefault = true;
     programs.git.extraConfig.signing.key = topLevel.config.flake.meta.users.${config.home.username}.key;
     programs.git.extraConfig.commit.gpgsign = true;
-
-    };
+  };
 }

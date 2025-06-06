@@ -16,7 +16,7 @@
     ];
   };
 
-  unify.modules.base.nixos =
+  flake.modules.nixos.base =
     { pkgs, lib, ... }:
     {
 
@@ -630,7 +630,7 @@
       #
       #
     };
-  unify.modules.base.home =
+  flake.modules.homeManager.base =
     { pkgs, ... }:
     {
       programs.nh.enable = true;

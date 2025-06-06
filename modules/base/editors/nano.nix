@@ -1,8 +1,8 @@
 {
-  unify.modules.base.nixos = {
+  flake.modules.nixos.base = {
     programs.nano.enable = false;
   };
-  unify.modules.base.home = {
+  flake.modules.homeManager.base = {
     programs.nano.enable = false;
   };
 }

@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos =
+  flake.modules.nixos.base =
     { pkgs, ... }:
     {
       users.users.root.shell = pkgs.fish;

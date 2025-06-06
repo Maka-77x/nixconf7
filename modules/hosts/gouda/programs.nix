@@ -1,5 +1,5 @@
 {
-  unify.hosts.nixos.gouda.nixos = {
+  unify.hosts."nixos.gouda".nixos = {
     programs = {
       noisetorch = {
         enable = true;

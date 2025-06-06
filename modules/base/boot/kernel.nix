@@ -1,5 +1,5 @@
 {
-  unify.modules.base.nixos =
+  flake.modules.nixos.base =
     { pkgs, ... }:
     {
       boot.kernelPackages = pkgs.linuxPackages_latest;
