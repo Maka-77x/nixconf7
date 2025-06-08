@@ -1,4 +1,4 @@
-topLevel@{
+{
   config,
   ...
 }:
@@ -629,12 +629,9 @@ topLevel@{
         programs.xwayland.enable = true;
       };
 
-    modules.homeManager.users.mimi =
+    modules.home-manager.users.mimi =
       { pkgs, ... }:
       {
-        programs.nh.enable = true;
-        programs.obs-studio.enable = true;
-
         home.file = {
           ".face" = {
             source = ../../../files/home/mimi/.face;
