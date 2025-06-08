@@ -2,8 +2,8 @@
   flake.modules.nixos.base =
     { hostConfig, ... }:
     {
-      networkin.hostName = hostConfig.name;
-      networkin.networkmanager.enable = true;
+      networking.hostName = hostConfig.name;
+      networking.networkmanager.enable = true;
       networking.networkmanager.dns = "systemd-resolved";
       networking.useDHCP = false;
       networking.nameservers = [
