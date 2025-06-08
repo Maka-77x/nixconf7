@@ -27,7 +27,7 @@
       ]
       ++ [
         {
-          home-manager.users.mimi.imports = with config.flake.modules.homeManager; [
+          home-manager.users.mimi.imports = with config.flake.modules.home-manager; [
             # "ai"
             "base"
             #       "bluetooth"
