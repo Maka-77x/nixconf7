@@ -20,7 +20,7 @@
       virtualisation.incus.enable = true; # Enables the Incus daemon
       #       virtualisation.incus.preseed.enable = true; # Configure Incus on first start
       #       virtualisation.incus.preseed.configFile = ./incus-preseed.yaml; # Optional: preseed configuration
-      virtualisation.incus.packageOptions.withMicrovm = true; # Include microvm support
+      # virtualisation.incus.packageOptions.withMicrovm = true; # Include microvm support
       #   virtualisation.incus.packageOptions.withTools = true; # Include tools package
       #   system.custom.mainUser.extraGroups = [ "lxd" ];
 
