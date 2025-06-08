@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.modules.nixos.hosts."nixos/gouda" =
+  flake.modules.nixos."hosts/gouda" =
     {
       modulesPath,
       ...

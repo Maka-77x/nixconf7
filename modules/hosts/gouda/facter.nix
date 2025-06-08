@@ -1,3 +1,3 @@
 {
-  flake.modules.nixos."nixos/gouda".facter.reportPath = ./facter.json;
+  flake.modules.nixos."hosts/gouda".facter.reportPath = ./facter.json;
 }

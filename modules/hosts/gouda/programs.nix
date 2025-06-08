@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."nixos/gouda" = {
+  flake.modules.nixos."hosts/gouda" = {
     programs = {
       noisetorch = {
         enable = true;
