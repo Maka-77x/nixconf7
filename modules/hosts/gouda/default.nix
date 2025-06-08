@@ -14,7 +14,7 @@
       #       email
       facter
       fwupd
-      games
+      # games
       #       guacamole
       messaging
       mimi
