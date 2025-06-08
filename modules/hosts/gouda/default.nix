@@ -16,7 +16,7 @@
       fwupd
       # games
       #       guacamole
-      messaging
+      # messaging # only home modules exist for messaging, currently
       mimi
       openssh
       root
@@ -37,14 +37,14 @@
           #       "email"
           "facter" # already defined in nixos base
           # "fwupd"
-          # "games"
+          "games"
           #       "guacamole"
-          # "messaging"
-          # "openssh" # already defined in nixos base
+          "messaging"
+          # "openssh" # only system/nixos module exists???
           "shell" # already defined in nixos base
           # "sound"
           # "virtualisation"
-          #       "vpn" # already defined in nixos base
+          "vpn" # already defined in nixos base
           #       "work"
           "laptop"
         ];
