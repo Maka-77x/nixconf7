@@ -21,7 +21,8 @@ topLevel@{
         programs.jujutsu.settings.snapshot.max-new-file-size = "15M";
 
         programs.jujutsu.settings.user = {
-          inherit (topLevel.config.flake.meta.users.${config.home.username}) email name;
+          name = topLevel.config.flake.meta.users.${config.home.username}.name;
+          email = topLevel.config.flake.meta.users.${config.home.username}.email;
         };
 
         programs.jujutsu.settings.ui = {

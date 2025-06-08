@@ -1,5 +1,7 @@
 {
-  flake.modules.homeManager.shell = {
-    programs.htop.enable = true;
+  flake.modules = {
+    homeManager.shell = {
+      programs.htop.enable = true;
+    };
   };
 }

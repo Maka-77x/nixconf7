@@ -22,7 +22,6 @@ topLevel@{
     modules.nixos.mimi =
       { pkgs, lib, ... }:
       {
-
         environment.defaultPackages = lib.mkForce [
           pkgs.rsync
           pkgs.parted
@@ -311,7 +310,7 @@ topLevel@{
         programs.fish.enable = true;
 
         users.users.mimi = {
-          description = topLevel.config.flake.meta.users.mimi.name;
+          description = config.flake.meta.users.mimi.name;
           isNormalUser = true;
           createHome = true;
           extraGroups = [
