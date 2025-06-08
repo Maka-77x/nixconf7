@@ -1,10 +1,6 @@
 {
-  lib,
-  ...
-}:
-{
   flake.modules.nixos."hosts/gouda" =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       boot.extraModulePackages = [ ];
       boot.extraModprobeConfig = ''

@@ -8,11 +8,11 @@
       systemd.user.startServices = "sd-switch";
 
       home.file.".face" = {
-        source = ../../../files/home/mimi/.face;
+        source = ../../files/home/mimi/.face;
         recursive = true;
       };
       home.file.".face.icon" = {
-        source = ../../../files/home/mimi/.face;
+        source = ../../files/home/mimi/.face;
         recursive = true;
       };
       home.file."${config.xdg.configHome}/.password-store/.keep" = {
@@ -21,7 +21,7 @@
       };
       # Credits to https://store.kde.org/p/1272202
       home.file."Pictures/Backgrounds/" = {
-        source = ../../../files/home/mimi/Pictures/Backgrounds;
+        source = ../../files/home/mimi/Pictures/Backgrounds;
         recursive = true;
       };
 

@@ -1,10 +1,6 @@
 {
-  lib,
-  ...
-}:
-{
   flake.modules.nixos."hosts/gouda" =
-    { config, ... }:
+    { config, lib, ... }:
     {
       fileSystems."/" = {
         device = "/dev/disk/by-uuid/279093a1-315d-4896-bd15-dac40458bc15";

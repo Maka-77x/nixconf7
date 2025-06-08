@@ -28,7 +28,7 @@
     ]
     ++ [
       {
-        home-manager.users.mimi.imports = with config.flake.modules.home-manager; [
+        home-manager.users.mimi.imports = with config.flake.modules.homeManager; [
           # "ai" # already defined in nixos base
           "base" # already defined in nixos base
           # "bluetooth"
