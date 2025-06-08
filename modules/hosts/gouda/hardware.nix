@@ -1,12 +1,9 @@
 {
-  inputs,
-  lib,
-  ...
-}:
-{
   flake.modules.nixos."hosts/gouda" =
     {
       modulesPath,
+      inputs,
+      lib,
       ...
     }:
     {
