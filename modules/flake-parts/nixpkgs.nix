@@ -33,7 +33,7 @@
           inputs.deploy-rs.overlays.default
         ];
       };
-      pkgsDirectory = ../../../pkgs/by-name;
+      pkgsDirectory = ../../pkgs/by-name;
     };
 
   flake = {
