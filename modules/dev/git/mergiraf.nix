@@ -1,5 +1,7 @@
 {
-  flake.modules.homeManager.dev = {
-    programs.mergiraf.enable = true;
+  flake.modules = {
+    homeManager.dev = {
+      programs.mergiraf.enable = true;
+    };
   };
 }

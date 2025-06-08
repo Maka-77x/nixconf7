@@ -1,8 +1,13 @@
 {
-  flake.modules.nixos.base = {
-    programs.nano.enable = false;
-  };
-  flake.modules.homeManager.base = {
-    programs.nano.enable = false;
+  flake.modules = {
+    nixos.base =
+      { lib, ... }:
+      {
+        programs.nano.enable = lib.mkForce false;
+      };
+
+    homeManager.base = {
+      programs.nano.enable = false;
+    };
   };
 }

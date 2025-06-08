@@ -1,17 +1,18 @@
 {
-  flake.modules.homeManager.base = {
-    programs.home-manager.enable = true;
-    # See https://ohai.social/@rycee/112502545466617762
-    # See https://github.com/nix-community/home-manager/issues/5452
-    systemd.user.startServices = "sd-switch";
+  flake.modules = {
+    homeManager.base = {
+      programs.home-manager.enable = true;
+      # See https://ohai.social/@rycee/112502545466617762
+      # See https://github.com/nix-community/home-manager/issues/5452
+      systemd.user.startServices = "sd-switch";
 
-    services.home-manager.autoExpire.enable = true;
-    services.home-manager.autoExpire.frequency = "weekly";
-    services.home-manager.autoExpire.store.cleanup = true;
+      services.home-manager.autoExpire.enable = true;
+      services.home-manager.autoExpire.frequency = "weekly";
+      services.home-manager.autoExpire.store.cleanup = true;
 
-    services.gpg-agent.enable = true;
-    services.gpg-agent.enableSshSupport = true;
-    services.gpg-agent.ssshKeys = [ "ABD1DA446DB82D241AFC4AB7D98338CC986BA77E" ];
+      services.gpg-agent.enable = true;
+      services.gpg-agent.enableSshSupport = true;
+      services.gpg-agent.ssshKeys = [ "ABD1DA446DB82D241AFC4AB7D98338CC986BA77E" ];
+    };
   };
-
 }

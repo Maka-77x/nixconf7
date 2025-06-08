@@ -1,10 +1,12 @@
 {
-  flake.modules.homeManager.base =
-  { config, ... }:
-  {
-    programs.password-store.enable = true;
-    programs.password-store.settings = {
-      PASSWORD_STORE_DIR = "${config.xdg.configHome}/.password-store";
-    };
+  flake.modules = {
+    homeManager.base =
+      { config, ... }:
+      {
+        programs.password-store.enable = true;
+        programs.password-store.settings = {
+          PASSWORD_STORE_DIR = "${config.xdg.configHome}/.password-store";
+        };
+      };
   };
 }

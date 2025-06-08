@@ -7,11 +7,12 @@
     inputs.make-shell.flakeModules.default
   ];
 
-  flake.modules.nixos.base = {
-    programs.nh.enable = true;
-    programs.nh.clean.enable = true;
-    programs.nh.clean.extraArgs = "--keep 2";
-
+  flake.modules = {
+    nixos.base = {
+      programs.nh.enable = true;
+      programs.nh.clean.enable = true;
+      programs.nh.clean.extraArgs = "--keep 2";
+    };
   };
 
   perSystem =

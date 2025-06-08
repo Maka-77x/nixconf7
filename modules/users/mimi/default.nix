@@ -633,7 +633,7 @@ topLevel@{
         #
         #
       };
-    flake.modules.home-manager.users.mimi =
+    modules.homeManager.users.mimi =
       { pkgs, ... }:
       {
         programs.nh.enable = true;
