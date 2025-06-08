@@ -311,7 +311,7 @@ topLevel@{
         programs.fish.enable = true;
 
         users.users.mimi = {
-          description = config.flake.meta.users.mimi.name;
+          description = topLevel.config.flake.meta.users.mimi.name;
           isNormalUser = true;
           createHome = true;
           extraGroups = [

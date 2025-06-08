@@ -20,7 +20,7 @@ flags:
     help: Username to add as a reviewer to the pull request
     required: false
 examples:
-  - gh-flake-update nixosConfigurations.x13.config.system.build.toplevel
+  - gh-flake-update nixosConfigurations.gouda.config.system.build.toplevel
 environment_variables:
   - name: GH_TOKEN
     help: Github API token
