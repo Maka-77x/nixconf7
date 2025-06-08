@@ -1,4 +1,4 @@
-{
+topLevel@{
   config,
   ...
 }:
@@ -16,7 +16,7 @@
     ];
   };
 
-  flake.modules.nixos.base =
+  flake.modules.nixos.mimi =
     { pkgs, lib, ... }:
     {
 
@@ -630,7 +630,7 @@
       #
       #
     };
-  flake.modules.homeManager.base =
+  flake.modules.home-manager.users.mimi =
     { pkgs, ... }:
     {
       programs.nh.enable = true;
