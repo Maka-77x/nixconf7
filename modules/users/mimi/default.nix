@@ -628,11 +628,8 @@ topLevel@{
 
         programs.virt-manager.enable = true;
         programs.xwayland.enable = true;
-
-        #
-        #
-        #
       };
+
     modules.homeManager.users.mimi =
       { pkgs, ... }:
       {

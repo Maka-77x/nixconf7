@@ -1,5 +1,7 @@
 {
-  flake.modules.homeManager.shell = {
-    programs.bottom.enable = true;
+  flake.modules = {
+    homeManager.shell = {
+      programs.bottom.enable = true;
+    };
   };
 }
