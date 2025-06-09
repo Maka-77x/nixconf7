@@ -20,9 +20,6 @@
         services.avahi.extraServiceFiles.ssh = "${pkgs.avahi}/etc/avahi/services/ssh.service";
         services.avahi.extraServiceFiles.sftp-ssh = "${pkgs.avahi}/etc/avahi/services/sftp-ssh.service";
 
-        services.kdeconnect.enable = true;
-        services.kdeconnect.package = pkgs.kdePackages.kdeconnect-kde;
-
         environment.variables = rec {
           #XCURSOR_SIZE = config.me.cursorSize;
           XDG_DATA_HOME = "$HOME/.local/share";
