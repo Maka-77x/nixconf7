@@ -2,7 +2,11 @@
   flake.modules = {
     homeManager.shell = {
       programs.starship.enable = true;
+
       programs.starship.enableTransience = true;
+
+      programs.starship.settings.add_newline = false;
+
       programs.starship.settings.custom.jj1 = {
         when = "jj root --ignore-working-copy";
         detect_folders = [ ".jj" ];
@@ -32,6 +36,7 @@
           '
         '';
       };
+
       programs.starship.settings.custom.jj2 = {
         when = "jj root --ignore-working-copy";
         detect_folders = [ ".jj" ];
@@ -45,18 +50,23 @@
           '
         '';
       };
+
       programs.starship.settings.git_state = {
         disabled = true;
       };
+
       programs.starship.settings.git_status = {
         disabled = true;
       };
+
       programs.starship.settings.git_commit = {
         disabled = true;
       };
+
       programs.starship.settings.git_metrics = {
         disabled = true;
       };
+
       programs.starship.git_branch = {
         disabled = true;
       };

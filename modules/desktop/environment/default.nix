@@ -16,13 +16,23 @@
         ];
 
         xdg.portal.extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde ];
+
         xdg.portal.xdgOpenUsePortal = true;
         xdg.portal.wlr.enable = true;
 
-        services.xserver.xkb =
-          {
-            # options = "eurosign:e";
-          };
+        nixpkgs.config.allowBroken = false;
+        nixpkgs.config.allowUnsupportedSystem = true;
+        nixpkgs.config.permittedInsecurePackages = [ ];
+        nixpkgs.config.allowAliases = true;
+        nixpkgs.config.enableParallelBuildingByDefault = false;
+        nixpkgs.config.showDerivationWarnings = [ ];
+        nixpkgs.config.packageOverrides = pkgs: {
+          vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+        };
+
+        services.xserver.xkb = {
+          # options = "eurosign:e";
+        };
         services.xserver.excludePackages = with pkgs; [ xterm ];
         services.xserver.enable = lib.mkForce false;
         services.xserver.displayManager.gdm.enable = false;
@@ -39,8 +49,18 @@
         services.displayManager.sddm.wayland.enable = true;
         services.displayManager.sddm.wayland.compositor = "kwin";
         services.displayManager.defaultSession = "plasma";
-
-        networking.firewall.allowedUDPPorts = [ 5678 ];
+        environment.defaultPackages = lib.mkForce [
+          pkgs.rsync
+          pkgs.parted
+          pkgs.gptfdisk
+          pkgs.e2fsprogs
+        ];
+        # Remove unneeded KDE apps
+        environment.plasma6.excludePackages = [
+          pkgs.kdePackages.elisa
+          pkgs.kdePackages.oxygen
+          pkgs.ibus
+        ];
       };
 
     homeManager.desktop =

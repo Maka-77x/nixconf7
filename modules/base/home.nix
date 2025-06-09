@@ -13,6 +13,9 @@
       services.gpg-agent.enable = true;
       services.gpg-agent.enableSshSupport = true;
       services.gpg-agent.ssshKeys = [ "ABD1DA446DB82D241AFC4AB7D98338CC986BA77E" ];
+      services.syncthing.enable = true;
+      #   services.syncthing.tray.enable = true;
+
     };
   };
 }
