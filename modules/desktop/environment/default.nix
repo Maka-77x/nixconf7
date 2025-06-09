@@ -65,10 +65,22 @@
       };
 
     homeManager.desktop =
-      { pkgs, ... }:
+      { pkgs, lib, ... }:
       {
         nixpkgs.config.allowUnfree = true;
         nixpkgs.overlays = [ inputs.self.overlays.default ];
+        services.mpris-proxy.enable = true;
+        services.network-manager-applet.enable = true;
+        programs.droidcam.enable = true;
+        programs.kdeconnect.enable = true;
+        programs.kdeconnect.package = lib.mkForce pkgs.kdePackages.kdeconnect-kde;
+        programs.mosh.enable = true;
+        programs.localsend.enable = true;
+        programs.nm-applet.enable = true;
+        services.zerotierone.enable = true;
+        # services.zerotierone.joinNetworks = secrets.zerotierone.networks;
+        programs.wireshark.enable = true;
+        programs.wireshark.package = pkgs.wireshark;
         services.blueman-applet.enable = true;
         services.playerctld.enable = true;
         services.kdeconnect.enable = true;
