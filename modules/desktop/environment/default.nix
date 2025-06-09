@@ -69,10 +69,10 @@
       {
         nixpkgs.config.allowUnfree = true;
         nixpkgs.overlays = [ inputs.self.overlays.default ];
-
         services.blueman-applet.enable = true;
         services.playerctld.enable = true;
-
+        services.kdeconnect.enable = true;
+        services.kdeconnect.package = pkgs.kdePackages.kdeconnect-kde;
         home.packages = with pkgs; [
           kdePackages.accounts-qt
           kdePackages.akonadi-search

@@ -3,10 +3,6 @@
     nixos.base =
       { pkgs, ... }:
       {
-
-        services.kdeconnect.enable = true;
-        services.kdeconnect.package = pkgs.kdePackages.kdeconnect-kde;
-
         services.packagekit.enable = true;
         services.flatpak.enable = false;
         # Limit the systemd journal to 100 MB of disk or the
