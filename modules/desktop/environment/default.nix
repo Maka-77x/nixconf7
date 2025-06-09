@@ -49,6 +49,7 @@
         services.displayManager.sddm.wayland.enable = true;
         services.displayManager.sddm.wayland.compositor = "kwin";
         services.displayManager.defaultSession = "plasma";
+        programs.kde-pim.enable = true;
         environment.defaultPackages = lib.mkForce [
           pkgs.rsync
           pkgs.parted
@@ -68,6 +69,9 @@
       {
         nixpkgs.config.allowUnfree = true;
         nixpkgs.overlays = [ inputs.self.overlays.default ];
+
+        services.blueman-applet.enable = true;
+        services.playerctld.enable = true;
 
         home.packages = with pkgs; [
           kdePackages.accounts-qt

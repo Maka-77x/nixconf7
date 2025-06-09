@@ -26,6 +26,8 @@
         services.resolved.extraConfig = ''
           		MulticastDNS=no # This is handled by Avahi.
            	'';
+        services.mpris-proxy.enable = true;
+        services.network-manager-applet.enable = true;
         programs.droidcam.enable = true;
         programs.kdeconnect.enable = true;
         programs.kdeconnect.package = lib.mkForce pkgs.kdePackages.kdeconnect-kde;
