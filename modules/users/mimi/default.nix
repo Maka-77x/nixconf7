@@ -349,33 +349,32 @@
       programs.partition-manager.enable = true;
       programs.virt-manager.enable = true;
       programs.xwayland.enable = true;
-    };
-  home-manager.users.mimi =
-    { pkgs, ... }:
-    {
-      home.file = {
-        ".face" = {
-          source = ../../../files/home/mimi/.face;
-          recursive = true;
-        };
-        "${config.xdg.configHome}/.password-store/.keep" = {
-          text = "";
-          recursive = true;
-        };
-      };
-      home.packages = with pkgs; [
-        kdePackages.accounts-qt
-        nh
-      ];
 
-      services.deluge = {
-        enable = true;
-        web.enable = true;
-      };
-
-      services.polybar.package = pkgs.polybar.override {
-        mpdSupport = true;
-        pulseSupport = true;
-      };
+      home-manager.users.mimi =
+        { pkgs, ... }:
+        {
+          home.file = {
+            ".face" = {
+              source = ../../../files/home/mimi/.face;
+              recursive = true;
+            };
+            "${config.xdg.configHome}/.password-store/.keep" = {
+              text = "";
+              recursive = true;
+            };
+          };
+          home.packages = with pkgs; [
+            kdePackages.accounts-qt
+            nh
+          ];
+          services.deluge = {
+            enable = true;
+            web.enable = true;
+          };
+          services.polybar.package = pkgs.polybar.override {
+            mpdSupport = true;
+            pulseSupport = true;
+          };
+        };
     };
 }
