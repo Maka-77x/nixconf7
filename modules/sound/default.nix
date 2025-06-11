@@ -21,13 +21,8 @@
         #     adjust-sample-rate."context.properties"."default.clock.min-quantum" = 32;
         #     adjust-sample-rate."context.properties"."default.clock.max-quantum" = 32;
         # };
-        wireplumber.enable = true;
+        # wireplumber.enable = true;
       };
     };
-
-    users.users.mimi.extraGroups = [
-      "sound"
-      "audio"
-    ];
   };
 }
