@@ -29,24 +29,24 @@
     ++ [
       {
         home-manager.users.mimi.imports = with config.flake.modules.homeManager; [
-          # "ai" # already defined in nixos base
-          "base" # already defined in nixos base
+          # ai # already defined in nixos base
+          base # already defined in nixos base
           # "bluetooth"
-          "desktop"
-          "dev"
-          "email"
-          "facter" # already defined in nixos base
-          # "fwupd"
-          "games"
+          desktop
+          dev
+          email
+          facter # already defined in nixos base
+          # fwupd
+          games
           #       "guacamole"
-          "messaging"
+          messaging
           # "openssh" # only system/nixos module exists???
-          "shell" # already defined in nixos base
-          "sound"
-          "virtualisation"
-          "vpn" # already defined in nixos base
+          shell # already defined in nixos base
+          sound
+          virtualisation
+          vpn # already defined in nixos base
           #       "work"
-          "laptop"
+          laptop
         ];
       }
     ];

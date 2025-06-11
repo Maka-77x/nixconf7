@@ -28,21 +28,21 @@
       {
         home-manager.users.mimi.imports = with config.flake.modules.homeManager; [
           # "ai"
-          "base"
+          base
           #       "bluetooth"
           # "desktop"
-          "dev"
+          dev
           #       "email"
-          "facter"
+          facter
           #       "fwupd"
           #       "games"
           #       "guacamole"
           #       "messaging"
           #       "openssh"
-          "shell"
+          shell
           #       "sound"
           #       "virtualisation"
-          "vpn"
+          vpn
           #       "work"
           # "laptop"
         ];
