@@ -42,7 +42,7 @@
           messaging
           # "openssh" # only system/nixos module exists???
           shell # already defined in nixos base
-          sound
+          # sound
           virtualisation
           vpn # already defined in nixos base
           #       "work"
