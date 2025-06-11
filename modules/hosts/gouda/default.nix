@@ -46,7 +46,7 @@
           # virtualisation
           vpn # already defined in nixos base
           #       "work"
-          laptop
+          # laptop
         ];
       }
     ];
