@@ -46,7 +46,6 @@
           openmoji-color
           twitter-color-emoji
         ];
-
         fonts.fontconfig = {
           defaultFonts = {
             emoji = [ "Twitter Color Emoji" ];
@@ -55,12 +54,11 @@
             serif = [ "Aporetic Sans Mono" ];
           };
         };
-
-        homeManager.desktop = {
-          fonts = {
-            fontconfig.enable = true;
-          };
-        };
       };
+    homeManager.desktop = {
+      fonts = {
+        fontconfig.enable = true;
+      };
+    };
   };
 }
