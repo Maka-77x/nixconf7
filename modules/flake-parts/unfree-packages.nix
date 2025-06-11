@@ -11,9 +11,7 @@
         predicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
       in
       {
-        nixos.base = {
-          nixpkgs.config.allowUnfreePredicate = predicate;
-        };
+        nixos.base.nixpkgs.config.allowUnfreePredicate = predicate;
 
         homeManager.base = args: {
           nixpkgs.config = {
@@ -24,5 +22,4 @@
 
     meta.nixpkgs.allowedUnfreePackages = config.nixpkgs.allowedUnfreePackages;
   };
-
 }

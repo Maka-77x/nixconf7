@@ -1,7 +1,10 @@
 {
   flake.modules = {
     nixos.base =
-      { lib, ... }:
+      {
+        lib,
+        ...
+      }:
       {
         services.userborn.enable = true;
 
