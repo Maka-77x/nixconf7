@@ -1,11 +1,11 @@
 {
-  flake.modules = {
-    nixos.base = {
-      console.useXkbConfig = true;
-      console.earlySetup = true;
-      console.font = "Lat2-Terminus16";
-      #console.keyMap = "de";
-      console.colors = [
+  flake.modules.nixos.base = {
+    console = {
+      useXkbConfig = true;
+      earlySetup = true;
+      font = "Lat2-Terminus16";
+      #keyMap = "de";
+      colors = [
         "171717"
         "d81765"
         "97d01a"

@@ -294,8 +294,6 @@
           zstd # Fast compression algorithm
           obs-studio-plugins.droidcam-obs
         ];
-        programs.fish.enable = true;
-
         users.users.mimi = {
           description = config.flake.meta.users.mimi.name;
           isNormalUser = true;
@@ -329,30 +327,36 @@
           openssh.authorizedKeys.keys = config.flake.meta.users.mimi.authorizedKeys;
           initialPassword = "id";
         };
-        nix.settings.trusted-users = [ config.flake.meta.users.mimi.username ];
-        nix.daemonCPUSchedPolicy = "idle";
-        services.commafeed.enable = true;
-        services.dbus.implementation = "broker";
-        services.dbus.enable = true;
-        services.dbus.packages = with pkgs; [
-          dconf
-          gcr
-          udisks2
-        ];
-        services.libinput.enable = true;
-        services.pcscd.enable = true;
-        services.ratbagd.enable = true;
-        # services.xrdp.defaultWindowManager = "${pkgs.kdePackages.plasma-workspace}/bin/startplasma-x11";
-        # services.xrdp.enable = false;
-        # services.xrdp.openFirewall = true;
+        nix = {
+          settings.trusted-users = [ config.flake.meta.users.mimi.username ];
+          daemonCPUSchedPolicy = "idle";
+        };
+        services = {
+          commafeed.enable = true;
+          dbus.implementation = "broker";
+          dbus.enable = true;
+          dbus.packages = with pkgs; [
+            dconf
+            gcr
+            udisks2
+          ];
+          libinput.enable = true;
+          pcscd.enable = true;
+          ratbagd.enable = true;
+          # xrdp.defaultWindowManager = "${pkgs.kdePackages.plasma-workspace}/bin/startplasma-x11";
+          # xrdp.enable = false;
+          # xrdp.openFirewall = true;
+        };
         hardware.wooting.enable = true;
-        programs.adb.enable = true;
-        programs.bat.enable = true;
-        programs.less.lessopen = lib.mkDefault null;
-        programs.partition-manager.enable = true;
-        programs.virt-manager.enable = true;
-        programs.xwayland.enable = true;
-
+        programs = {
+          adb.enable = true;
+          bat.enable = true;
+          less.lessopen = lib.mkDefault null;
+          partition-manager.enable = true;
+          virt-manager.enable = true;
+          xwayland.enable = true;
+          fish.enable = true;
+        };
         home-manager.users.mimi =
           { pkgs, ... }:
           {
@@ -370,13 +374,26 @@
               kdePackages.accounts-qt
               nh
             ];
-            services.deluge = {
-              enable = true;
-              web.enable = true;
+            programs = {
+              ssh = {
+                enableAskPassword = true;
+                askPassword = "${lib.getExe' pkgs.kdePackages.ksshaskpass "ksshaskpass"}";
+                hostKeyAlgorithms = [
+                  "ssh-ed25519"
+                  "ssh-rsa"
+                ];
+                startAgent = false;
+              };
             };
-            services.polybar.package = pkgs.polybar.override {
-              mpdSupport = true;
-              pulseSupport = true;
+            services = {
+              deluge = {
+                enable = true;
+                web.enable = true;
+              };
+              polybar.package = pkgs.polybar.override {
+                mpdSupport = true;
+                pulseSupport = true;
+              };
             };
           };
       };

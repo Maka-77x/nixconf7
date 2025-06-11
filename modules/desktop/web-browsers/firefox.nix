@@ -4,7 +4,7 @@
 }:
 {
   flake.modules = {
-    homeManager.dev =
+    homeManager.desktop =
       { pkgs, ... }:
       {
         nixpkgs.overlays = [
@@ -17,7 +17,6 @@
           in
           {
             enable = true;
-            package = (pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { });
             nativeMessagingHosts = [
               pkgs.browserpass
             ];

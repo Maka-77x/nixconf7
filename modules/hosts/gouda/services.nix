@@ -1,25 +1,28 @@
 {
-  flake.modules = {
-    nixos."hosts/gouda" =
-      { pkgs, lib, ... }:
-      {
-        services.xserver.xkb.layout = "gb";
+  flake.modules.nixos."hosts/gouda" =
+    { pkgs, lib, ... }:
+    {
+      services = {
+        xserver.xkb.layout = "gb";
 
-        services.thermald.enable = true;
-        services.deluge.enable = true;
-        services.deluge.web.enable = true;
+        thermald.enable = true;
+        deluge.enable = true;
+        deluge.web.enable = true;
 
-        services.avahi.enable = true;
-        services.avahi.publish.enable = true;
-        services.avahi.publish.domain = true;
-        services.avahi.publish.userServices = true;
-        services.avahi.publish.workstation = true;
-        services.avahi.publish.addresses = true;
-        services.avahi.nssmdns4 = true;
-        services.avahi.reflector = true;
-        services.avahi.extraServiceFiles.ssh = "${pkgs.avahi}/etc/avahi/services/ssh.service";
-        services.avahi.extraServiceFiles.sftp-ssh = "${pkgs.avahi}/etc/avahi/services/sftp-ssh.service";
-
+        avahi = {
+          enable = true;
+          publish = {
+            enable = true;
+            domain = true;
+            userServices = true;
+            workstation = true;
+            addresses = true;
+          };
+          nssmdns4 = true;
+          reflector = true;
+          extraServiceFiles.ssh = "${pkgs.avahi}/etc/avahi/services/ssh.service";
+          extraServiceFiles.sftp-ssh = "${pkgs.avahi}/etc/avahi/services/sftp-ssh.service";
+        };
         environment.variables = rec {
           #XCURSOR_SIZE = config.me.cursorSize;
           XDG_DATA_HOME = "$HOME/.local/share";
@@ -149,5 +152,5 @@
               ":*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:";
         };
       };
-  };
+    };
 }

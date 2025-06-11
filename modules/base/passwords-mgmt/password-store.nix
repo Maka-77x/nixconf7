@@ -3,9 +3,13 @@
     homeManager.base =
       { config, ... }:
       {
-        programs.password-store.enable = true;
-        programs.password-store.settings = {
-          PASSWORD_STORE_DIR = "${config.xdg.configHome}/.password-store";
+        programs = {
+          password-store = {
+            enable = true;
+            settings = {
+              PASSWORD_STORE_DIR = "${config.xdg.configHome}/.password-store";
+            };
+          };
         };
       };
   };

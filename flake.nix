@@ -44,9 +44,9 @@
 
     make-shell.url = "github:nicknovitski/make-shell";
 
-    unify.url = "git+https://codeberg.org/quasigod/unify";
-    unify.inputs.nixpkgs.follows = "nixpkgs";
-    unify.inputs.home-manager.follows = "home-manager";
+    # unify.url = "git+https://codeberg.org/quasigod/unify";
+    # unify.inputs.nixpkgs.follows = "nixpkgs";
+    # unify.inputs.home-manager.follows = "home-manager";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";

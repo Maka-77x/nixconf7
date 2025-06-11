@@ -1,16 +1,17 @@
 {
-  flake.modules = {
-    homeManager.base = {
-
-      xdg.icons.enable = true;
-      xdg.enable = true;
-      xdg.mime.enable = true;
-      xdg.userDirs.enable = true;
-      xdg.userDirs.createDirectories = true;
-      xdg.userDirs.templates = null;
-      xdg.userDirs.music = null;
-      xdg.userDirs.videos = null;
-      xdg.userDirs.publicShare = null;
+  flake.modules.homeManager.base = {
+    xdg = {
+      icons.enable = true;
+      enable = true;
+      mime.enable = true;
+      userDirs = {
+        enable = true;
+        createDirectories = true;
+        templates = null;
+        music = null;
+        videos = null;
+        publicShare = null;
+      };
     };
   };
 }

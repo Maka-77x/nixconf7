@@ -3,14 +3,18 @@
     homeManager.dev =
       { pkgs, ... }:
       {
-        programs.gh.enable = true;
-        programs.gh.extensions = [
-          pkgs.gh-copilot
-        ];
+        programs = {
+          gh = {
+            enable = true;
+            extensions = [
+              pkgs.gh-copilot
+            ];
+          };
+        };
       };
-
-    nixpkgs.allowedUnfreePackages = [
-      "gh-copilot"
-    ];
   };
+
+  nixpkgs.allowedUnfreePackages = [
+    "gh-copilot"
+  ];
 }

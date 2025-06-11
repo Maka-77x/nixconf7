@@ -1,8 +1,11 @@
 {
   flake.modules = {
     homeManager.shell = {
-      programs.eza.enable = true;
+      programs = {
+        eza = {
+          enable = true;
+        };
+      };
     };
   };
-
 }

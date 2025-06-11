@@ -1,7 +1,11 @@
 {
   flake.modules = {
     homeManager.shell = {
-      programs.fzf.enable = true;
+      programs = {
+        fzf = {
+          enable = true;
+        };
+      };
     };
   };
 }

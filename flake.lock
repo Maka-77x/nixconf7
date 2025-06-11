@@ -347,24 +347,6 @@
         "type": "github"
       }
     },
-    "flake-parts_6": {
-      "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib_4"
-      },
-      "locked": {
-        "lastModified": 1743550720,
-        "narHash": "sha256-hIshGgKZCgWh6AYJpJmRgFdR3WUbkY04o82X05xqQiY=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "c621e8422220273271f52058f618c94e405bb0f5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": [
@@ -1164,21 +1146,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-lib_4": {
-      "locked": {
-        "lastModified": 1743296961,
-        "narHash": "sha256-b1EdN3cULCqtorQ4QeWgLMrd5ZGOjLSLemfa00heasc=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "e4822aea2a6d1cdd36653c134cacfd64c97ff4fa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
     "nixpkgs-master": {
       "locked": {
         "lastModified": 1749502690,
@@ -1427,7 +1394,6 @@
         "systems": "systems_7",
         "treefmt-nix": "treefmt-nix_2",
         "ttf-to-tty": "ttf-to-tty",
-        "unify": "unify",
         "yatline-catppuccin.yazi": "yatline-catppuccin.yazi",
         "yatline-githead.yazi": "yatline-githead.yazi",
         "yatline.yazi": "yatline.yazi"
@@ -1735,30 +1701,6 @@
         "owner": "Sigmanificient",
         "repo": "ttf_to_tty",
         "type": "github"
-      }
-    },
-    "unify": {
-      "inputs": {
-        "flake-parts": "flake-parts_6",
-        "home-manager": [
-          "home-manager"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1748917966,
-        "narHash": "sha256-bTun3Y2ZuaQi7BArn/VEeKLFBVt4uz9mTCEm4gowrxs=",
-        "ref": "refs/heads/main",
-        "rev": "ae47c971506ee5b58bb35f3326297b97e70d297e",
-        "revCount": 36,
-        "type": "git",
-        "url": "https://codeberg.org/quasigod/unify"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://codeberg.org/quasigod/unify"
       }
     },
     "utils": {

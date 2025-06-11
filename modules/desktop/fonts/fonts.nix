@@ -47,15 +47,20 @@
           twitter-color-emoji
         ];
 
-        fonts.fontconfig.defaultFonts.emoji = [ "Twitter Color Emoji" ];
-        fonts.fontconfig.defaultFonts.monospace = [ "Aporetic Sans Mono" ];
-        fonts.fontconfig.defaultFonts.sansSerif = [ "Aporetic Sans Mono" ];
-        fonts.fontconfig.defaultFonts.serif = [ "Aporetic Sans Mono" ];
-        fonts.fontconfig.useEmbeddedBitmaps = true;
-      };
+        fonts.fontconfig = {
+          defaultFonts = {
+            emoji = [ "Twitter Color Emoji" ];
+            monospace = [ "Aporetic Sans Mono" ];
+            sansSerif = [ "Aporetic Sans Mono" ];
+            serif = [ "Aporetic Sans Mono" ];
+          };
+        };
 
-    homeManager.desktop = {
-      fonts.fontconfig.enable = true;
-    };
+        homeManager.desktop = {
+          fonts = {
+            fontconfig.enable = true;
+          };
+        };
+      };
   };
 }
