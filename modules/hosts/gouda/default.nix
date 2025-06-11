@@ -43,7 +43,7 @@
           # "openssh" # only system/nixos module exists???
           shell # already defined in nixos base
           # sound
-          virtualisation
+          # virtualisation
           vpn # already defined in nixos base
           #       "work"
           laptop
