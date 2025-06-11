@@ -23,11 +23,11 @@
         };
         wireplumber.enable = true;
       };
-
-      users.users.mimi.extraGroups = [
-        "sound"
-        "audio"
-      ];
     };
+
+    users.users.mimi.extraGroups = [
+      "sound"
+      "audio"
+    ];
   };
 }
