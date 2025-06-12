@@ -169,9 +169,9 @@
           settings.trusted-users = [ config.flake.meta.users.mimi.username ];
           daemonCPUSchedPolicy = "idle";
         };
-        hardware.wooting.enable = true;
+        # hardware.wooting.enable = true;
         home-manager.users.mimi =
-          { pkgs, ... }:
+          { config, pkgs, ... }:
           {
             home.file = {
               ".face" = {
@@ -185,7 +185,6 @@
             };
             home.packages = with pkgs; [
               # Packages for Home-Manager
-
               ## KDE GUI
               kdePackages.accounts-qt
               kdePackages.akonadi-search
