@@ -28,6 +28,7 @@
 
     "vivaldi"
     "wootility"
+    "corefonts"
   ];
   flake.modules = {
     nixos.desktop =
