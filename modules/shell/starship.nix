@@ -1,17 +1,6 @@
 {
   flake.modules = {
     homeManager.shell = {
-      services =
-        { pkgs, ... }:
-        {
-          # xrdp.defaultWindowManager = "${pkgs.kdePackages.plasma-workspace}/bin/startplasma-x11";
-          # xrdp.enable = false;
-          # xrdp.openFirewall = true;
-          polybar.package = pkgs.polybar.override {
-            mpdSupport = true;
-            pulseSupport = true;
-          };
-        };
       programs = {
         bat.enable = true;
         fish.enable = true;

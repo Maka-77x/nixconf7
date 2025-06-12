@@ -22,6 +22,7 @@
       { pkgs, lib, ... }:
       {
         programs = {
+
           adb.enable = true; # nixos
           less.lessopen = lib.mkDefault null;
           partition-manager.enable = true;
@@ -404,6 +405,9 @@
               python313Full
             ];
             programs = {
+              bat.enable = true;
+              fish.enable = true;
+              obs-studio.enable = true;
               ssh = {
                 enableAskPassword = true;
                 askPassword = "${lib.getExe' pkgs.kdePackages.ksshaskpass "ksshaskpass"}";
