@@ -11,6 +11,7 @@
         gnome.gnome-keyring.enable = true;
       };
     };
+
     homeManager.dev =
       { pkgs, ... }:
       {
@@ -50,8 +51,8 @@
                 pkgs.vscode-extensions.editorconfig.editorconfig
                 pkgs.vscode-extensions.esbenp.prettier-vscode
 
-                pkgs.master.vscode-extensions.github.copilot
-                pkgs.master.vscode-extensions.github.copilot-chat
+                pkgs.vscode-extensions.github.copilot
+                pkgs.vscode-extensions.github.copilot-chat
 
                 pkgs.vscode-extensions.github.github-vscode-theme
                 pkgs.vscode-extensions.github.vscode-pull-request-github
@@ -61,12 +62,12 @@
                 pkgs.vscode-extensions.mkhl.direnv
                 pkgs.vscode-extensions.mongodb.mongodb-vscode
 
-                pkgs.master.vscode-extensions.ms-python.debugpy
-                pkgs.master.vscode-extensions.ms-python.mypy-type-checker
-                pkgs.master.vscode-extensions.ms-python.python
-                pkgs.master.vscode-extensions.ms-python.vscode-pylance
+                pkgs.vscode-extensions.ms-python.debugpy
+                pkgs.vscode-extensions.ms-python.mypy-type-checker
+                pkgs.vscode-extensions.ms-python.python
+                pkgs.vscode-extensions.ms-python.vscode-pylance
 
-                pkgs.master.vscode-extensions.ms-toolsai.jupyter
+                pkgs.vscode-extensions.ms-toolsai.jupyter
                 pkgs.vscode-extensions.ms-vscode-remote.remote-containers
                 pkgs.vscode-extensions.ms-vscode-remote.remote-ssh
                 pkgs.vscode-extensions.ms-vsliveshare.vsliveshare
@@ -79,7 +80,7 @@
                 pkgs.vscode-extensions.tekumara.typos-vscode
                 pkgs.vscode-extensions.usernamehw.errorlens
 
-                pkgs.master.vscode-extensions.visualjj.visualjj
+                pkgs.vscode-extensions.visualjj.visualjj
 
                 pkgs.vscode-extensions.yzhang.markdown-all-in-one
                 pkgs.vscode-extensions.zhuangtongfa.material-theme
@@ -270,18 +271,20 @@
             };
           };
         };
-
-        nixpkgs.allowedUnfreePackages = [
-          "vscode"
-          "vscode-extension-bmewburn-vscode-intelephense-client"
-          "vscode-extension-github-copilot"
-          "vscode-extension-github-copilot-chat"
-          "vscode-extension-MS-python-vscode-pylance"
-          "vscode-extension-ms-vscode-remote-remote-containers"
-          "vscode-extension-ms-vscode-remote-remote-ssh"
-          "vscode-extension-ms-vsliveshare-vsliveshare"
-          "vscode-extension-visualjj-visualjj"
-        ];
       };
+  };
+
+  nixpkgs = {
+    allowedUnfreePackages = [
+      "vscode"
+      "vscode-extension-bmewburn-vscode-intelephense-client"
+      "vscode-extension-github-copilot"
+      "vscode-extension-github-copilot-chat"
+      "vscode-extension-MS-python-vscode-pylance"
+      "vscode-extension-ms-vscode-remote-remote-containers"
+      "vscode-extension-ms-vscode-remote-remote-ssh"
+      "vscode-extension-ms-vsliveshare-vsliveshare"
+      "vscode-extension-visualjj-visualjj"
+    ];
   };
 }
