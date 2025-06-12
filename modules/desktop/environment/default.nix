@@ -51,6 +51,9 @@
             };
           };
 
+          zerotierone.enable = true;
+          # zerotierone.joinNetworks = secrets.zerotierone.networks;
+
           desktopManager = {
             plasma6.enable = true;
             plasma6.enableQt5Integration = false;
@@ -101,8 +104,7 @@
           overlays = [ inputs.self.overlays.default ];
         };
         services = {
-          zerotierone.enable = true;
-          # zerotierone.joinNetworks = secrets.zerotierone.networks;
+
           blueman-applet.enable = true;
           playerctld.enable = true;
           kdeconnect.enable = true;
