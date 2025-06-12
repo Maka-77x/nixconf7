@@ -70,7 +70,7 @@
           kdePackages.xwaylandvideobridge # system pkg ## System bridge
 
           ## various
-          bind-utils # DNS utilities including dig
+          bind
           lm_sensors
 
           ## Hardware, Drivers & Core System
