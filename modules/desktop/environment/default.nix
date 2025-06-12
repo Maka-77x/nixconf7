@@ -27,6 +27,7 @@
     "zerotierone"
 
     "vivaldi"
+    "wootility"
   ];
   flake.modules = {
     nixos.desktop =
