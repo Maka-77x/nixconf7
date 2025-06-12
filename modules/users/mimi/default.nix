@@ -279,7 +279,7 @@
               axel
               backblaze-b2
               bandwhich
-              bash-completion
+              # bash-completion
               bat
               bfg-repo-cleaner
               btop
