@@ -7,6 +7,14 @@
 
     # 	 enable systemd DNS resolver daemon
     services = {
+      commafeed.enable = true;
+      deluge = {
+        enable = true;
+        web.enable = true;
+      };
+      libinput.enable = true;
+      pcscd.enable = true;
+      ratbagd.enable = true;
       resolved = {
         enable = true;
         dnssec = "allow-downgrade";

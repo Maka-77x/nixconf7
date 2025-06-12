@@ -103,14 +103,16 @@
           wireshark.package = pkgs.wireshark;
         };
 
-        services.zerotierone.enable = true;
-        # services.zerotierone.joinNetworks = secrets.zerotierone.networks;
-        services.blueman-applet.enable = true;
-        services.playerctld.enable = true;
-        services.kdeconnect.enable = true;
-        services.kdeconnect.package = pkgs.kdePackages.kdeconnect-kde;
-        services.mpris-proxy.enable = true;
-        services.network-manager-applet.enable = true;
+        services = {
+          zerotierone.enable = true;
+          # zerotierone.joinNetworks = secrets.zerotierone.networks;
+          blueman-applet.enable = true;
+          playerctld.enable = true;
+          kdeconnect.enable = true;
+          kdeconnect.package = pkgs.kdePackages.kdeconnect-kde;
+          mpris-proxy.enable = true;
+          network-manager-applet.enable = true;
+        };
 
         home.packages = with pkgs; [
           kdePackages.accounts-qt

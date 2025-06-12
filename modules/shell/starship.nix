@@ -4,18 +4,9 @@
       services =
         { pkgs, ... }:
         {
-          commafeed.enable = true;
-          libinput.enable = true;
-          pcscd.enable = true;
-          ratbagd.enable = true;
           # xrdp.defaultWindowManager = "${pkgs.kdePackages.plasma-workspace}/bin/startplasma-x11";
           # xrdp.enable = false;
           # xrdp.openFirewall = true;
-          #
-          deluge = {
-            enable = true;
-            web.enable = true;
-          };
           polybar.package = pkgs.polybar.override {
             mpdSupport = true;
             pulseSupport = true;
