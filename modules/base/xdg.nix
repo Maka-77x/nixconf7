@@ -1,7 +1,7 @@
 {
   flake.modules.homeManager.base = {
     xdg = {
-      icons.enable = true;
+      # icons.enable = true;
       enable = true;
       mime.enable = true;
       userDirs = {
