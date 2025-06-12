@@ -14,7 +14,7 @@
       gpg-agent = {
         enable = true;
         enableSshSupport = true;
-        ssshKeys = [ "ABD1DA446DB82D241AFC4AB7D98338CC986BA77E" ];
+        sshKeys = [ "ABD1DA446DB82D241AFC4AB7D98338CC986BA77E" ];
       };
       syncthing.enable = true;
       #   services.syncthing.tray.enable = true;
