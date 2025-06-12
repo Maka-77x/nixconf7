@@ -21,6 +21,24 @@
     modules.nixos.mimi =
       { pkgs, lib, ... }:
       {
+        programs = {
+          adb.enable = true; # nixos
+          less.lessopen = lib.mkDefault null;
+          partition-manager.enable = true;
+          virt-manager.enable = true;
+          xwayland.enable = true;
+          obs-studio = {
+            plugins = with pkgs.obs-studio-plugins; [
+              obs-vkcapture
+              input-overlay
+              obs-pipewire-audio-capture
+              wlrobs
+              droidcam-obs
+              #inputs.obs-image-reaction.packages.${pkgs.system}.default
+            ];
+          };
+        };
+
         environment.systemPackages = with pkgs; [
           # Custom scripts for KDE's D-Bus interface
           (pkgs.writeShellScriptBin "qdbus-qt6" "exec -a $0 ${pkgs.kdePackages.qttools}/bin/qdbus $@") # Creates qdbus-qt6 command for Qt6 D-Bus interaction
@@ -331,32 +349,7 @@
           settings.trusted-users = [ config.flake.meta.users.mimi.username ];
           daemonCPUSchedPolicy = "idle";
         };
-        services = {
-          commafeed.enable = true;
-          dbus.implementation = "broker";
-          dbus.enable = true;
-          dbus.packages = with pkgs; [
-            dconf
-            gcr
-            udisks2
-          ];
-          libinput.enable = true;
-          pcscd.enable = true;
-          ratbagd.enable = true;
-          # xrdp.defaultWindowManager = "${pkgs.kdePackages.plasma-workspace}/bin/startplasma-x11";
-          # xrdp.enable = false;
-          # xrdp.openFirewall = true;
-        };
         hardware.wooting.enable = true;
-        programs = {
-          adb.enable = true;
-          bat.enable = true;
-          less.lessopen = lib.mkDefault null;
-          partition-manager.enable = true;
-          virt-manager.enable = true;
-          xwayland.enable = true;
-          fish.enable = true;
-        };
         home-manager.users.mimi =
           { pkgs, ... }:
           {
@@ -383,16 +376,6 @@
                   "ssh-rsa"
                 ];
                 startAgent = false;
-              };
-            };
-            services = {
-              deluge = {
-                enable = true;
-                web.enable = true;
-              };
-              polybar.package = pkgs.polybar.override {
-                mpdSupport = true;
-                pulseSupport = true;
               };
             };
           };
