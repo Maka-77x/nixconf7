@@ -22,7 +22,15 @@
       { pkgs, lib, ... }:
       {
         programs = {
-
+          ssh = {
+            enableAskPassword = true;
+            askPassword = "${lib.getExe' pkgs.kdePackages.ksshaskpass "ksshaskpass"}";
+            hostKeyAlgorithms = [
+              "ssh-ed25519"
+              "ssh-rsa"
+            ];
+            startAgent = false;
+          };
           adb.enable = true; # nixos
           less.lessopen = lib.mkDefault null;
           partition-manager.enable = true;
@@ -408,15 +416,6 @@
               bat.enable = true;
               fish.enable = true;
               obs-studio.enable = true;
-              ssh = {
-                enableAskPassword = true;
-                askPassword = "${lib.getExe' pkgs.kdePackages.ksshaskpass "ksshaskpass"}";
-                hostKeyAlgorithms = [
-                  "ssh-ed25519"
-                  "ssh-rsa"
-                ];
-                startAgent = false;
-              };
             };
           };
       };
