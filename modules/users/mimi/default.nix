@@ -408,7 +408,7 @@
               nixos-generators # Generate NixOS images for various formats
               update-nix-fetchgit # Update nix-prefetch-git hashes
               vulnix # NixOS vulnerability scanner
-              python313Full
+              #python313Full
             ];
             programs = {
               bat.enable = true;
