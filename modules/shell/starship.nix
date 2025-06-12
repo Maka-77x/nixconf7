@@ -2,9 +2,7 @@
   flake.modules = {
     homeManager.shell = {
       programs = {
-        bat.enable = true;
-        fish.enable = true;
-        obs-studio.enable = true;
+
         starship = {
           enable = true;
           enableTransience = true;

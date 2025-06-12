@@ -6,8 +6,8 @@
 {
   flake.modules = {
     homeManager.dev =
-      { pkgs, hostConfig, ... }:
-      lib.mkIf (builtins.elem "desktop" hostConfig.tags) {
+      { pkgs, ... }:
+      {
         nixpkgs.overlays = [
           (final: prev: {
             unstable = import inputs.nixpkgs-unstable {

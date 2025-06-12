@@ -11,15 +11,17 @@
     };
 
     homeManager.dev =
-      { pkgs, hostConfig, ... }:
-      lib.mkIf (builtins.elem "desktop" hostConfig.tags) {
-        nixpkgs.overlays = [
-          (final: prev: {
-            master = import inputs.nixpkgs-master {
-              inherit (final) config system;
-            };
-          })
-        ];
+      { pkgs, ... }:
+      {
+        nixpkgs = {
+          overlays = [
+            (final: prev: {
+              master = import inputs.nixpkgs-master {
+                inherit (final) config system;
+              };
+            })
+          ];
+        };
 
         home.packages = with pkgs; [
           vscode-runner
