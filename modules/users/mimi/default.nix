@@ -235,7 +235,7 @@
               steam
               steam-run # Run unpatched Linux programs
               thunderbird
-              vscodium
+              #vscodium
               xfce.mousepad # Simple text editor
               zathura # Document viewer
               zed-editor

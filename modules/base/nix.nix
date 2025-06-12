@@ -5,7 +5,7 @@
       # See https://discourse.nixos.org/t/24-05-add-flake-to-nix-path/46310/9
       # See https://hachyderm.io/@leftpaddotpy/112539055867932912
       nix.channel.enable = false;
-      nix.settings.nixPath = [
+      nix.nixPath = [
         "nixpkgs=${pkgs.path}"
         "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixpkgs:nixos-config=$HOME/v00-0101-nixfiles-kig/configuration.nix:/nix/var/nix/profiles/per-user/root/channels"
         #     "/nix/var/nix/profiles/per-user/root/channels"
