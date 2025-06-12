@@ -60,13 +60,9 @@
 
         services = {
           xserver = {
-            displayManager.gdm.enable = false;
-            desktopManager.gnome.enable = false;
             excludePackages = with pkgs; [ xterm ];
             enable = lib.mkForce false;
-
             videoDrivers = [ "modesetting" ];
-
             xkb = {
               layout = "gb";
               variant = "";
@@ -78,11 +74,13 @@
           # zerotierone.joinNetworks = secrets.zerotierone.networks;
 
           desktopManager = {
+            gnome.enable = false;
             plasma6.enable = true;
             plasma6.enableQt5Integration = false;
           };
 
           displayManager = {
+            gdm.enable = false;
             sddm = {
               enable = true;
               enableHidpi = true;
