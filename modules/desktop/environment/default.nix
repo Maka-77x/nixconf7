@@ -25,6 +25,8 @@
     "discord"
     "spotify"
     "zerotierone"
+
+    "vivaldi"
   ];
   flake.modules = {
     nixos.desktop =
