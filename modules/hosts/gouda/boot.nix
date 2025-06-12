@@ -49,7 +49,6 @@
 
         initrd = {
           verbose = false;
-          systemd.strip = true;
           enable = true;
           systemd.enable = true;
 
