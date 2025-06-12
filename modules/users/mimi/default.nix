@@ -262,7 +262,7 @@
               nmap # Network exploration and security auditing
               nushell # Modern shell
               nvd # Diff tool for comparing Nix packages
-              nvtop # GPU process monitoring tool
+
               oils-for-unix # Shell replacement (formerly Oil shell)
               openssl # Cryptography and SSL/TLS toolkit
               podman-compose # Docker Compose for Podman
