@@ -66,8 +66,18 @@
             defaultSession = "plasma";
           };
         };
+        programs = {
+          droidcam.enable = true;
+          kdeconnect.enable = true;
+          kdeconnect.package = lib.mkForce pkgs.kdePackages.kdeconnect-kde;
+          kde-pim.enable = true;
+          mosh.enable = true;
+          localsend.enable = true;
+          nm-applet.enable = true;
+          wireshark.enable = true;
+          wireshark.package = pkgs.wireshark;
+        };
 
-        programs.kde-pim.enable = true;
         environment.defaultPackages = lib.mkForce [
           pkgs.rsync
           pkgs.parted
@@ -83,26 +93,13 @@
       };
 
     homeManager.desktop =
-      { pkgs, lib, ... }:
+      { pkgs, ... }:
       {
         xdg.portal.xdgOpenUsePortal = true;
-
         nixpkgs = {
           config.allowUnfree = true;
           overlays = [ inputs.self.overlays.default ];
         };
-
-        programs = {
-          droidcam.enable = true;
-          kdeconnect.enable = true;
-          kdeconnect.package = lib.mkForce pkgs.kdePackages.kdeconnect-kde;
-          mosh.enable = true;
-          localsend.enable = true;
-          nm-applet.enable = true;
-          wireshark.enable = true;
-          wireshark.package = pkgs.wireshark;
-        };
-
         services = {
           zerotierone.enable = true;
           # zerotierone.joinNetworks = secrets.zerotierone.networks;
@@ -113,7 +110,6 @@
           mpris-proxy.enable = true;
           network-manager-applet.enable = true;
         };
-
         home.packages = with pkgs; [
           kdePackages.accounts-qt
           kdePackages.akonadi-search
