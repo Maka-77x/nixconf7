@@ -238,7 +238,6 @@
               #vscodium
               xfce.mousepad # Simple text editor
               zathura # Document viewer
-              zed-editor
               obs-studio-plugins.droidcam-obs
 
               ## various
