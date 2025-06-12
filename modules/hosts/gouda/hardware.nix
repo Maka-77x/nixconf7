@@ -3,11 +3,7 @@
   ...
 }:
 {
-  # Add unfree packages declaration
-  nixpkgs.allowedUnfreePackages = [
-    "ipu6-camera-bins"
-    "ipu6-camera-bins-unstable"
-  ];
+
   flake.modules.nixos."hosts/gouda" =
     {
       modulesPath,

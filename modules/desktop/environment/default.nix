@@ -3,6 +3,28 @@
   ...
 }:
 {
+  nixpkgs.allowedUnfreePackages = [
+    # Intel camera/media
+    "ipu6-camera-bins"
+    "ipu6-camera-bins-unstable"
+    "ivsc-firmware"
+    "ivsc-firmware-unstable"
+    "ivsc-firmware-unstable-2024-06-14-zstd"
+
+    # Graphics drivers
+    "nvidia-x11"
+    "nvidia-settings"
+    "cuda-toolkit"
+
+    # Hardware firmware
+    "broadcom-bt-firmware"
+    "b43-firmware"
+
+    # Other common unfree
+    "steam"
+    "discord"
+    "spotify"
+  ];
   flake.modules = {
     nixos.desktop =
       { pkgs, lib, ... }:
