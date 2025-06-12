@@ -169,7 +169,7 @@
           settings.trusted-users = [ config.flake.meta.users.mimi.username ];
           daemonCPUSchedPolicy = "idle";
         };
-        # hardware.wooting.enable = true;
+        # hardware.
         home-manager.users.mimi =
           { config, pkgs, ... }:
           {

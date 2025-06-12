@@ -104,7 +104,6 @@
           overlays = [ inputs.self.overlays.default ];
         };
         services = {
-
           blueman-applet.enable = true;
           playerctld.enable = true;
           kdeconnect.enable = true;
