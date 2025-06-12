@@ -122,7 +122,7 @@
           hypridle # System-level session locking/idling # Idle daemon for Hyprland
           hyprlock # Screen locker for Hyprland
           iwd # Wireless daemon
-          libvirtd # if virt-manager is used
+          libvirt # if virt-manager is used
           lxqt.lxqt-policykit # PolicyKit agent for GVFS permissions
           networkmanager
           nats-server # The server component
